@@ -59,7 +59,7 @@ My sort of JS cheat in one place 😄
 
 ## 2. Built-in Objects
 
-- Array
+- [Array](blob/master/README_ARRAY.md)
 - Function
 - JSON
 - Object

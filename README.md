@@ -33,7 +33,7 @@ My sort of JS cheat in one place 😄
   ```
   module.exports = { ... }
   ```
-* [AMD]https://github.com/nelsieborja/js-dictionary/tree/master/AMD (Asynchronous Module Definition)
+* [AMD](https://github.com/nelsieborja/js-dictionary/tree/master/AMD) (Asynchronous Module Definition)
   - _Browser-first_ approach
   - Loads modules asynchronously
   ```

@@ -26,22 +26,22 @@ My sort of JS cheat in one place 😄
 
   > <b style="color: #663399">[Revealing Module Pattern]</b> <font color="#9D7CBF">same as `Object Interface` but it ensures all methods/variables are kept private until explicitly exposed</font>
 
-* **CommonJS**
+* [CommonJS](https://github.com/nelsieborja/js-dictionary/tree/master/CommonJS)
   - Used in Node.js
   - _Server-first_ approach
   - Loads modules synchronously
   ```
   module.exports = { ... }
   ```
-* **AMD** (Asynchronous Module Definition)
+* [AMD]https://github.com/nelsieborja/js-dictionary/tree/master/AMD (Asynchronous Module Definition)
   - _Browser-first_ approach
   - Loads modules asynchronously
   ```
   define([], function() { ... })
   ```
-* **UMD** (Universal Module Definition)
+* [UMD](https://github.com/nelsieborja/js-dictionary/tree/master/UMD) (Universal Module Definition)
   - Supports both `CommonJS` and `AMD` features
-* **ES6 Modules**
+* [ES6 Modules](https://github.com/nelsieborja/js-dictionary/tree/master/ES6%20Modules)
 
   - Compact and declarative syntax, also asynchronous module loading
   - _imports_ are _**live read-only views of the exports**_ (with `CommonJS` _imports_ are copies of _exports_, consequently not alive)
@@ -59,7 +59,7 @@ My sort of JS cheat in one place 😄
 
 ## 2. Built-in Objects
 
-- [Array](blob/master/README_ARRAY.md)
+- [Array](https://github.com/nelsieborja/js-dictionary/blob/master/README_ARRAY.md)
 - Function
 - JSON
 - Object

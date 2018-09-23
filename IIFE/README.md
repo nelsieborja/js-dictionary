@@ -1,4 +1,4 @@
-# IFFE (Immediately-Invoked Function Expression)
+# IIFE (Immediately-Invoked Function Expression)
 
 ## Few fundamental concepts around JS functions
 

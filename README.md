@@ -6,7 +6,7 @@ My sort of JS cheat in one place 😄
 
 ## 1. Module Pattern
 
-> <font color="#4084a1">Or Module Systems in JavaScript. Where _"modules"_ refers to a small unit of independent, reusable code.</font>
+> Or Module Systems in JavaScript. Where _"modules"_ refers to a small unit of independent, reusable code.
 
 ### Importants:
 
@@ -16,27 +16,23 @@ My sort of JS cheat in one place 😄
 
 ### Several ways to create:
 
-- **IFFE** (Immediately-Invoked Function Expression)
-
-  > <b style="color: #663399">[Anonymous Closure]</b> <font color="#9D7CBF">typical `IFFE`</font>
-
-  > <b style="color: #663399">[Global Import]</b> <font color="#9D7CBF">same as `Anonymous closure` but accepts globals as parameter</font>
-
-  > <b style="color: #663399">[Object Interface]</b> <font color="#9D7CBF">self-contained object interface; freedom to define which variables/methods to expose and to keep private</font>
-
-  > <b style="color: #663399">[Revealing Module Pattern]</b> <font color="#9D7CBF">same as `Object Interface` but it ensures all methods/variables are kept private until explicitly exposed</font>
+* [IIFE](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE) (Immediately-Invoked Function Expression)
+  * Anonymous Closure
+  * Global Import
+  * Object Interface
+  * Revealing Module Pattern
 
 * [CommonJS](https://github.com/nelsieborja/js-dictionary/tree/master/CommonJS)
   - Used in Node.js
   - _Server-first_ approach
   - Loads modules synchronously
-  ```
+  ```javascript
   module.exports = { ... }
   ```
 * [AMD](https://github.com/nelsieborja/js-dictionary/tree/master/AMD) (Asynchronous Module Definition)
   - _Browser-first_ approach
   - Loads modules asynchronously
-  ```
+  ```javascript
   define([], function() { ... })
   ```
 * [UMD](https://github.com/nelsieborja/js-dictionary/tree/master/UMD) (Universal Module Definition)
@@ -46,7 +42,7 @@ My sort of JS cheat in one place 😄
   - Compact and declarative syntax, also asynchronous module loading
   - _imports_ are _**live read-only views of the exports**_ (with `CommonJS` _imports_ are copies of _exports_, consequently not alive)
 
-  ```
+  ```javascript
   // hello.js
   export const HELLO_WORLD = 'Konnichiwa Sekai!';
 
@@ -59,7 +55,7 @@ My sort of JS cheat in one place 😄
 
 ## 2. Built-in Objects
 
-- [Array](https://github.com/nelsieborja/js-dictionary/blob/master/README_ARRAY.md)
+- [Array](https://github.com/nelsieborja/js-dictionary/blob/master/Build-in%20Objects/README_ARRAY.md)
 - Function
 - JSON
 - Object

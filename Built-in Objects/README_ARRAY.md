@@ -1,28 +1,29 @@
-# <font color="#663399">Array</font>
+# Array
 
-> <font color="#4084a1">_List-like_ objects whose prototype has methods to perform traversal and mutation operations.</font>
+> _List-like_ **objects** whose prototype has methods to perform traversal and mutation operations.
+
 
 ## Ways to call an array method, that I know of:
 
-- For _array-like_ objects:
-  ```
+- ### For _array-like_ objects:
+  ```javascript
   const $containerDiv = document.querySelectorAll('div.container');
   Array.prototype.forEach.call($containerDiv, elem => { ... });
   ```
-- Actual array objects:
-  ```
+
+- ### Actual array objects:
+  ```javascript
   [1, 2, 3].call(elem => { ... })
   ```
 
+---
+
 ## Methods
 
-<font color="#663399">
+- ### slice <i>vs</i> splice
 
-- slice <font color="#9D7CBF"><i>vs</i></font> splice
-
-  > <b>[slice]</b> <font color="#9D7CBF">returns a shallow copy of a portion of the array into a new array object</font>
-
-  ```
+  > **_slice()_** returns a shallow copy of a portion of the array into a new array object
+  ```javascript
   const array = [1, 2, 3, 4, 5];
 
   // Takes 3 items from index 0 to 3 (3 not included)
@@ -31,9 +32,8 @@
   console.log(array); // [1, 2, 3, 4, 5]
   ```
 
-  > <b>[splice]</b> <font color="#9D7CBF">removes element(s) from the array thereby changing its content</font>
-
-  ```
+  > **_splice()_** removes element(s) from the array thereby changing its content
+  ```javascript
   // Deletes 3 items from index 0; returns deleted items
   console.log(array.splice(0, 3)); // [1, 2, 3]
   // 2 items will remain in the array
@@ -44,11 +44,10 @@
   console.log(array); // [4, 5]
   ```
 
-- pop <font color="#9D7CBF"><i>vs</i></font> push
+- ### pop <i>vs</i> push
 
-  > <b>[pop]</b> <font color="#9D7CBF">removes the _last inserted_ item from the array</font>
-
-  ```
+  > **_pop()_** removes the _last inserted_ item from the array
+  ```javascript
   const array = [1, 2, 3, 4, 5];
 
   // Returns the removed item "5"
@@ -57,20 +56,18 @@
   console.log(array); // [1, 2, 3, 4]
   ```
 
-  > <b>[push]</b> <font color="#9D7CBF">adds element(s) to the end of the array</font>
-
-  ```
+  > **_push()_** adds element(s) to the end of the array
+  ```javascript
   // Returns the new length of the array
   console.log(array.push(5)); // 5
   // Adding multiple items to the array
   console.log(array.push(6, 7, 8, 9)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
   ```
 
-- shift <font color="#9D7CBF"><i>vs</i></font> unshift
+- ### shift <i>vs</i> unshift
 
-  > <b>[shift]</b> <font color="#9D7CBF">removes the _first inserted_ element from the array</font>
-
-  ```
+  > **_shift()_** removes the _first inserted_ element from the array
+  ```javascript
   const array = [1, 2, 3, 4, 5];
 
   // Returns the removed element
@@ -79,78 +76,70 @@
   console.log(array); // [2, 3, 4, 5]
   ```
 
-  > <b>[unshift]</b> <font color="#9D7CBF">adds element(s) to the beginning of the array</font>
-
-  ```
+  > **_unshift()_** adds element(s) to the beginning of the array
+  ```javascript
   // Adding "0,1"; Returns the new length of the array
   console.log(array.unshift(0, 1)); // 6
   console.log(array); [0, 1, 2, 3, 4, 5]
   ```
 
-- keys <font color="#9D7CBF"><i>vs</i></font> values <font color="#9D7CBF"><i>vs</i></font> entries
+- ### keys <i>vs</i> values <i>vs</i> entries - ~~IE support~~
 
-  > <b>[keys]</b> <font color="#9D7CBF">returns a new `Array Iterator` object that contains the **_keys_** of the element(s)</font>
-
-  ```
+  > **_keys()_** returns a new `Array Iterator` object that contains the **_keys_** of the element(s)
+  ```javascript
   console.log(['a', 'b'].keys().next()); // { value: 0, done: false }
   ```
 
-  > <b>[values]</b> <font color="#9D7CBF">same as `keys()` but contains the **_values_**</font>
-
-  ```
+  > **_values()_** same as `keys()` but contains the **_values_**
+  ```javascript
   console.log(['a', 'b'].values().next()); // { value: 'a', done: false }
   ```
 
-  > <b>[entries]</b> <font color="#9D7CBF">same as `keys()` and `values()` but contains the **_key/value pairs_** for each index of the array</font>
-
-  ```
+  > **_entries()_** same as `keys()` and `values()` but contains the **_key/value pairs_** for each index of the array
+  ```javascript
   console.log(['a', 'b'].entries().next()); // [0, 'a']
   ```
 
-- every <font color="#9D7CBF"><i>vs</i></font> some <font color="#9D7CBF"><i>vs</i></font> includes
+- ### every <i>vs</i> some <i>vs</i> includes
 
-  > <b>[every]</b> <font color="#9D7CBF">checks whether all elements in the array pass the provided condition</font>
-
-  ```
+  > **_every()_** checks whether all elements in the array pass the provided condition
+  ```javascript
   // Not all the elements are greater than 3, so it will return "false"
   console.log([1, 2, 3, 4, 5].every(currentValue => currentValue > 3)); // false
   ```
 
-  > <b>[some]</b> <font color="#9D7CBF">same as `every()` but checks if provided condition is met for at least one element</font>
-
-  ```
+  > **_some()_** same as `every()` but checks if provided condition is met for at least one element
+  ```javascript
   // 2 items are greater 3, so it gives "true"
   console.log([1, 2, 3, 4, 5].every(currentValue => currentValue > 3)); // true
   ```
 
-  > <b>[includes]</b> <font color="#9D7CBF">determines whether the array includes a certain element</font>
-
-  ```
+  > **_includes()_** determines whether the array includes a certain element
+  >> ~~IE support~~
+  ```javascript
   // Checking if array contains "2"
   console.log([1, 2, 3].includes(2)); // true
   // Array doesn't contain 4
   console.log([1, 2, 3].includes(4)); // false
   ```
 
-  > <font color="#4084a1">Unlike `every()` and `some()` it takes an element instead of a function</font>
+  > Unlike `every()` and `some()` it takes an element instead of a function
 
-- reverse <font color="#9D7CBF"><i>vs</i></font> sort
+- ### reverse <i>vs</i> sort
 
-  > <b>[reverse]</b> <font color="#9D7CBF">reverses an array</font>
-
-  ```
+  > **_reverse()_** reverses an array
+  ```javascript
   // Returns the reversed array
   console.log(['Jan', 'Feb', 'Mar'].reverse()); // ['Mar', 'Feb', 'Jan']
   ```
 
-  > <b>[sort]</b> <font color="#9D7CBF">sorts the elements of the array; default is according to string Unicode code points</font>
-
-  ```
+  > **_sort()_** sorts the elements of the array; default is according to string Unicode code points
+  ```javascript
   // Returns the sorted array
   console.log(['Jan', 'Feb', 'Mar'].sort()); // ['Feb', 'Jan', 'Mar']
   ```
 
-  ```
+  ```javascript
   // Sorting numbers
   const numbers = [40, 2, 5, 3];
   // Numbers are converted into string using the default
@@ -159,11 +148,10 @@
   console.log(numbers.sort((a, b) => a - b)); // [2, 3, 5, 40]
   ```
 
-- join <font color="#9D7CBF"><i>vs</i></font> concat
+- ### join <i>vs</i> concat
 
-  > <b>[join]</b> <font color="#9D7CBF">join all elements of the array into a string</font>
-
-  ```
+  > **_join()_** join all elements of the array into a string
+  ```javascript
   const feels = ['love', 'hate', 'respect'];
 
   console.log(feels.join()); // "love,hate,respect"
@@ -171,9 +159,8 @@
   console.log(feels.join(' + ')); // "love + hate + respect"
   ```
 
-  > <b>[concat]</b> <font color="#9D7CBF">merges 2 or more arrays</font>
-
-  ```
+  > **_concat()_** merges 2 or more arrays
+  ```javascript
   const array1 = [1, 2, 3];
   const array2 = [4, 5, 6];
   // Returns a new array
@@ -182,11 +169,10 @@
   console.log(array1); //[1, 2, 3]
   ```
 
-- forEach <font color="#9D7CBF"><i>vs</i></font> filter <font color="#9D7CBF"><i>vs</i></font> map <font color="#9D7CBF"><i>vs</i></font> reduce
+- ### forEach <i>vs</i> filter <i>vs</i> map <i>vs</i> reduce/reduceRight
 
-  > <b>[forEach]</b> <font color="#9D7CBF">executes the provided function once for each element of the array</font>
-
-  ```
+  > **_forEach()_** executes the provided function once for each element of the array
+  ```javascript
   ['love', 'hate', 'respect'].forEach(
     (feel) => console.log(`Do you feel ${feel}?`)
   );
@@ -195,91 +181,95 @@
   // "Do you feel respect?"
   ```
 
-  > <b>[filter]</b> <font color="#9D7CBF">executes the provided function on every element of the the array and returns a new filtered array</font>
-
-  ```
+  > **_filter()_** executes the provided function on every element of the the array and returns a new filtered array
+  ```javascript
   console.log(['love', 'hate', 'respect'].filter(
     (feel) => feel !== 'hate'
   )); // ['love', 'respect']
   ```
 
-  > <font color="#4084a1">The main difference between `forEach` and `filter` is that `forEach` just loop over the array and executes the function while `filter` also checks the return value of the function which will determine whether to keep(_true_)/remove(_false_) the element from the _resulting array_</font>
+  > The main difference between `forEach` and `filter` is that `forEach` just loop over the array and executes the function while `filter` also checks the return value of the function which will determine whether to keep(_true_)/remove(_false_) the element from the _resulting array_
 
-  > <b>[map]</b> <font color="#9D7CBF">same as `forEach` and `filter`, takes a function and run it against every element on the array. Except it will generate a new array based on the calling array</font>
+  > **_map()_** similar to `forEach` and `filter`, takes a function and run it against every element on the array. Except it will generate a new array based on the calling array
 
-  > <font color="#4084a1">We can see this method being used a lot in every ReactJS codebase ^\_^</font>
+  > We can see this method being used a lot in every ReactJS codebase ^\_^
 
-  ```
+  ```javascript
   console.log(['love', 'hate', 'respect'].map(
     (feel) => `I ${feel === 'hate' ? 'don\'t ' : ''}feel ${feel}`
   )); // ["I feel love", "I don't feel hate", "I feel respect"]
   ```
 
-  > <b>[reduce]</b> <font color="#9D7CBF">reduce the array into one single value; same goes to `reduceRight` but in _right-to-left_ direction</font>
-
-  ```
+  > **_reduce()_** reduce the array into one single value; same goes to `reduceRight` but in _right-to-left_ direction
+  ```javascript
   console.log([1, 2, 3].reduce(
     (sum, currentValue) => sum + currentValue)
   ); // 6
   ```
 
-  > <font color="#4084a1">Also takes a function but it gets 2 arguments **sum**_(last returned value of the function)_ & **currentValue**_(current element in the iteration)_</font>
+  > Also takes a function but it gets 2 arguments **sum**_(last returned value of the function)_ & **currentValue**_(current element in the iteration)_
 
-- find/findIndex <font color="#9D7CBF"><i>vs</i></font> indexOf/lastIndexOf
+- ### find/findIndex <i>vs</i> indexOf/lastIndexOf
 
-  > <b>[find]</b> <font color="#9D7CBF">returns the **_value_** of the _first element_ in the array that satisfies the provided function</font>
-
-  ```
+  > **_find()_** returns the **_value_** of the _first element_ in the array _that satisfies the provided function_
+  >> ~~IE support~~
+  ```javascript
   console.log([1, 2, 3].find(num => num < 4)); // 1
   console.log([1, 2, 3].find(num => num > 4)); // undefined
   ```
 
-  > <b>[findIndex]</b> <font color="#9D7CBF">same as `find()` but returns **_index_** instead of **_value_**</font>
-
-  ```
+  > **_findIndex()_** similar to `find()` but returns **_index_** instead of **_value_**
+  >> ~~IE support~~
+  ```javascript
   console.log([1, 2, 3].findIndex(num => num > 1)); // 1
   // None of the items satisfies the function
   console.log([1, 2, 3].findIndex(num => num > 4)); // -1
   ```
 
-  > <b>[indexOf]</b> <font color="#9D7CBF">returns the **_first index_** at which given element can be found in the array; "-1" if it's not present</font>
-
-  ```
+  > **_indexOf()_** returns the **_first index_** at which _given element can be found_ in the array; "-1" if it's not present
+  ```javascript
   console.log(['love', 'hate', 'love', 'respect'].indexOf('love')); // 0
   // Start searching from index "1"
   console.log(['love', 'hate', 'love', 'respect'].indexOf('love', 1)); // 2
   ```
 
-  > <b>[lastIndexOf]</b> <font color="#9D7CBF">same as `indexOf()` but the array is searched backwards</font>
-
-  ```
+  > **_lastIndexOf()_** similar to `indexOf()` but the array is searched backwards
+  ```javascript
   console.log(['love', 'hate', 'love', 'respect'].lastIndexOf('love')); // 2
   console.log(['love', 'hate', 'love', 'respect'].lastIndexOf('love', 1)); // 0
   ```
 
-  </font>
+---
 
 ## Special Methods / Properties
 
-<font color="#663399">
+- ### from()
+  > converts _array-like_ objects into a new, shallow-copied `Array` instance.
 
-- <b>from()</b> - <font color="#9D7CBF">converts _array-like_ objects into a new, shallow-copied `Array` instance</font>
-
-  ```
+  ```javascript
   console.log(Array.from('love')); // ['l', 'o', 'v', 'e']
   ```
 
-- <b>isArray()</b> - <font color="#9D7CBF">determines whether the passed value is an `Array`</font>
+  > ~~IE support~~
 
-  ```
+- ### isArray()
+  > determines whether the passed value is an `Array`
+
+  ```javascript
   console.log(Array.isArray([1, 2, 3])); // true
   console.log(Array.isArray('love')); // false
   ```
 
-- <b>length</b> - <font color="#9D7CBF">returns the number of elements in the array</font>
+- ### length
+  > returns the number of elements in the array
 
-  ```
+  ```javascript
   console.log([1, 2, 3].length); // 3
   ```
 
-  </font>
+---
+
+## Descriptions
+
+* ### array-like objects
+  > objects with a `length` property and indexed elements, or they are iterable objects

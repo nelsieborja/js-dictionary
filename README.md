@@ -56,6 +56,6 @@ My sort of JS cheat in one place 😄
 ## 2. Built-in Objects
 
 - [Array](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_ARRAY.md)
-- Function
+- [Function](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_FUNCTION.md)
 - JSON
 - Object

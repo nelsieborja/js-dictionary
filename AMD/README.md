@@ -4,7 +4,7 @@ Stands for **_Asynchronous Module Definition_**, will load modules asynchronousl
 
 Loading modules using `AMD` looks something like this:
 
-```
+```javascript
 define(['module1', 'module2'], function(module1, module2) {
   console.log(module1.hello());
 });
@@ -14,7 +14,7 @@ define(['module1', 'module2'], function(module1, module2) {
 
 Second argument is a callback function, with the dependencies that were loaded as arguments, allowing the function to use these dependecies. The dependencies themselves must also be defined using the `define` keyword.
 
-```
+```javascript
 define([], function() {
   return {
     hello: function() {

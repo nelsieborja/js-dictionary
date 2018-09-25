@@ -222,3 +222,99 @@ console.log(f2()); // 20
     console.log(new GoodFeels('LOVE', 100));  // GoodFeels {feel: "LOVE", level: "100%", type: "GOOD"}
     console.log(new BadFeels('SAD', 50));     // BadFeels {feel: "SAD", level: "50%", type: "BAD"}
     ```
+
+    Using `call` with IIFE:
+    ```javascript
+    var feels = [
+      { feel: 'LOVE', level: 100 },
+      { feel: 'JOY', level: 90 },
+      { feel: 'SAD', level: 10 }
+    ];
+
+    // Traversing through the "feels" array
+    feels.forEach((feel, i) => {
+      // IIFE using "call" to invoke it
+      (function(i) {
+        //  Adding "print" function to every object in the array
+        this.print = () => console.log(`#${i} xx Feeling ${this.feel} at ${this.level}% level`);
+        // Printing the object elements
+        this.print();
+
+      // Passing 2 arguments into the call method:
+      // [feel] as the "this" argument, which is the current object in the iteration
+      // [i] as the argument for the IIFE, which is the current index in the iteration
+      }).call(feel, i);
+    });
+
+    // Output: #0 xx Feeling LOVE at 100% level
+    // Output: #1 xx Feeling JOY at 90% level
+    // Output: #2 xx Feeling SAD at 10% level
+    ```
+
+    Using `call` to specify the context for `this` of a function:
+    ```javascript
+    function feels() {
+      console.log(`I feel ${this.feel} towards ${this.whom}`);
+    }
+
+    var obj = {
+      feel: 'unsure',
+      whom: 'JavaScript'
+    };
+    // The value for "this" inside the function will be bound to "obj"
+    feels.call(obj);
+
+    // Output: I feel unsure towards JavaScript
+    ```
+
+    Using `call` without specifying the first argument:
+    ```javascript
+    var feel = 'unsure';
+
+    function feels() {
+      // The value of "this" is bound to the global object
+      console.log(`I feel ${this.feel} towards JavaScript`);
+    }
+    feels.call();
+
+    // Output: I feel unsure towards JavaScript
+    ```
+    > This will not work in _strict mode_ as the value of `this` will be `undefined`
+
+
+> `apply()` and `call()` syntax is almost identical, the fundamental difference is that `call()` accepts an **argument list** while `apply()` accepts a **single array of arguments**
+
+---
+
+## Properties
+
+- ### length
+  > returns the number of arguments expected by the function
+  ```javascript
+  (function() {}).length          // 0
+  (function(a, b, c) {}).length   // 3
+  ```
+
+- ### name
+  > returns the name of the function
+  ```javascript
+  var aaa = function() {};
+  aaa.name;                        // aaa
+  var bbb = function bbb_() {};
+  bbb.name;                        // bbb_
+  function ccc() {}
+  ccc.name;                        // ccc
+  ```
+
+- ### Function.prototype
+  > represents the `Function` prototype object
+  ```javascript
+  // Using `Function.prototype` to define custom `Function` method "feels"
+  Function.prototype.feels = function() {
+    console.log('Here have some feels!!!');
+  }
+
+  function numb() {}
+  // Calling custom method
+  numb.feels();                     // Here have some feels!!!
+  ```

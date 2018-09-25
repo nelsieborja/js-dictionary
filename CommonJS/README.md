@@ -6,7 +6,7 @@ With `CommonJS`, each JavaScript file stores modules in its own unique module co
 
 Here's how to expose a module using `module.exports` object:
 
-```
+```javascript
 // helloWorld.js
 const helloWorld = () => {
   return 'Hello World!';
@@ -16,7 +16,7 @@ module.exports = helloWorld;
 
 To use _helloWorld_ module, import it using `require`
 
-```
+```javascript
 // index.js
 const helloWorld = require('./helloWorld');
 console.log(helloWorld());
@@ -24,7 +24,7 @@ console.log(helloWorld());
 
 Under the hood, `helloWorld.js` is wrapped by `Node.js` this way:
 
-```
+```javascript
 (function (exports, require, module, __filename, __dirname) {
   const helloWorld = () => {
     return 'Hello World!';
@@ -38,7 +38,7 @@ This is why you can access the _global-like_ variables like `require` and `modul
 
 One more thing, required module will be a disconnected copy, hence update of values will take place in the module but not in the copied version. To update the copy manually:
 
-```
+```javascript
 // counter.js
 module.exports = {
   counter: 1

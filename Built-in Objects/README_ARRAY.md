@@ -50,7 +50,7 @@
   ```javascript
   const feels = ['LOVE', 'JOY'];
 
-  // Returns the removed item
+  // Pops out "JOY" from the array; Returns the removed item
   console.log(feels.pop());                                       // "JOY"
   // Array length is updated
   console.log(feels);                                             // ["LOVE"]
@@ -58,9 +58,9 @@
 
   > **_push()_** adds element(s) to the end of the array; updates original array
   ```javascript
-  // Returns the new length of the array
+  // Adds "JOY" into the array; Returns the new length of the array
   console.log(array.push('JOY'));                                 // 2 (array length)
-  // Adding multiple items to the array
+  // Adds multiple items into the array
   console.log(array.push('HAPPY', 'PEACE'));                      // 4 (array length)
   ```
 
@@ -70,7 +70,7 @@
   ```javascript
   const feels = ['LOVE', 'JOY', 'HAPPY'];
 
-  // Returns the removed element
+  // Retrieves "LOVE" from the array; Returns the removed element
   console.log(array.shift());                                     // "LOVE"
   // Array length is updated
   console.log(array);                                             // (2) ["JOY", "HAPPY"]
@@ -78,8 +78,10 @@
 
   > **_unshift()_** adds element(s) to the beginning of the array; updates original array
   ```javascript
+  // Adds "LOVE" & "PEACE" into the array
   // Returns the new length of the array
   console.log(array.unshift('LOVE', 'PEACE'));                    // 4 (array length)
+  // "LOVE" & "PEACE" took front spots
   console.log(array);                                             // (4) ["LOVE", "PEACE", "JOY", "HAPPY"]
   ```
 
@@ -104,24 +106,24 @@
 
   > **_every()_** checks whether all elements in the array pass the provided condition
   ```javascript
-  const array = [1, 2, 3, 4, 5];
-  // Not all the elements are greater than 3, so it gives "false"
-  console.log(array.every(currentValue => currentValue > 3));     // false
+  // OBJECTIVE: Check if all elements in the array are greater than 3
+  const count = [1, 2, 3, 4, 5];
+  console.log(count.every(currentValue => currentValue > 3));     // false
   ```
 
   > **_some()_** same as `every()` but checks if provided condition is met for at least one element
   ```javascript
-  // 2 items are greater 3, so it gives "true"
+  // OBJECTIVE: Check if some elements in the array are greater than 3
   console.log(array.some(currentValue => currentValue > 3));      // true
   ```
 
   > **_includes()_** determines whether the array includes a certain element
   >> ~~IE support~~
   ```javascript
-  // Checking if array contains "2"
-  console.log([1, 2, 3].includes(2));                             // true
-  // Array doesn't contain 4
-  console.log([1, 2, 3].includes(4));                             // false
+  // OBJECTIVE: Check if array contains "LOVE"
+  console.log(['LOVE', 'JOY'].includes('LOVE'));                  // true
+  // OBJECTIVE: Check if array contains "HATE"
+  console.log(['LOVE', 'JOY'].includes('HATE'));                  // false
   ```
 
   > Unlike `every()` and `some()` it takes an element instead of a function
@@ -145,7 +147,7 @@
   const numbers = [40, 2, 5, 3];
   // Numbers are converted into string using the default
   console.log(numbers.sort());                                    // (4) [2, 3, 40, 5]
-  // Sort using "Compare Function"
+  // Sorts using "Compare Function"
   console.log(numbers.sort((a, b) => a - b));                     // (4) [2, 3, 5, 40]
   ```
 
@@ -164,7 +166,7 @@
   ```javascript
   const array1 = [1, 2, 3];
   const array2 = [4, 5, 6];
-  // Returns a new array
+  // Merges array1 with array2; Returns a new array
   console.log(array1.concat(array2));                             // (6) [1, 2, 3, 4, 5, 6]
   // Existing array remains the same
   console.log(array1, array2);                                    // (3) [1, 2, 3] (3) [4, 5, 6]
@@ -174,6 +176,7 @@
 
   > **_forEach()_** executes the provided function once for each element of the array
   ```javascript
+  // OBJECTIVE: Log each item from the array and concat it with a string
   ['LOVE', 'JOY', 'PEACE'].forEach(
     feel => console.log(`Do you feel ${feel}?`)
   );
@@ -184,6 +187,7 @@
 
   > **_filter()_** executes the provided function on every element of the the array and returns a new filtered array
   ```javascript
+  // OBJECTIVE: Get rid of "HATE" from the array
   console.log(
     ['LOVE', 'JOY', 'PEACE', 'HATE'].filter(
       feel => feel.toUpperCase() !== 'HATE'
@@ -199,6 +203,7 @@
   > We can see this method being used a lot in every ReactJS codebase ^\_^
 
   ```javascript
+  // OBJECTIVE: Convert each element in the array into a short sentence
   console.log(
     ['LOVE', 'JOY', 'PEACE', 'HATE'].map(
       feel => `I ${feel.toUpperCase() === 'HATE' ? 'don\'t ' : ''}feel ${feel}`
@@ -209,6 +214,7 @@
 
   > **_reduce()_** reduce the array into one single value; same goes to `reduceRight` but in _right-to-left_ direction
   ```javascript
+  // OBJECTIVE: Get the total sum of all the elements in the array
   console.log(
     [1, 2, 3].reduce(
       (sum, currentValue) => sum + currentValue
@@ -224,21 +230,25 @@
   > **_find()_** returns the **_value_** of the _first element_ in the array _that satisfies the provided function_, otherwise it returns `undefined`
   >> ~~IE support~~
   ```javascript
+  // Gives the first element that is less than "4"
   console.log([1, 2, 3].find(num => num < 4));                    // 1
+  // Now with greater than "4"
   console.log([1, 2, 3].find(num => num > 4));                    // undefined
   ```
 
   > **_findIndex()_** similar to `find()` but returns **_index_** instead of **_value_**. Returns `-1` if no occurence found
   >> ~~IE support~~
   ```javascript
+  // Gives the `index` of the first element that is greater than "1"
   console.log([1, 2, 3].findIndex(num => num > 1));               // 1
-  // None of the items satisfies the function
+  // Now with greater than "4"
   console.log([1, 2, 3].findIndex(num => num > 4));               // -1
   ```
 
   > **_indexOf()_** returns the **_first index_** at which _given element can be found_ in the array; "-1" if it's not present
   ```javascript
   const feels = ['LOVE', 'JOY', 'PEACE', 'LOVE'];
+  // Gives the index of first element "LOVE"
   console.log(feels.indexOf('LOVE'));                             // 0
   // Start searching from index "1"
   console.log(feels.indexOf('LOVE', 1));                          // 3
@@ -246,6 +256,7 @@
 
   > **_lastIndexOf()_** similar to `indexOf()` but the array is searched backwards
   ```javascript
+  // Gives the index of last element "LOVE"
   console.log(feels.lastIndexOf('LOVE'));                         // 3
   console.log(feels.lastIndexOf('LOVE', 1));                      // 0
   ```
@@ -258,6 +269,7 @@
   > converts _array-like_ objects into a new, shallow-copied `Array` instance.
 
   ```javascript
+  // Converts 'LOVE' into array
   console.log(Array.from('LOVE'));                                // (4) ["L", "O", "V", "E"]
   ```
 
@@ -265,7 +277,9 @@
   > determines whether the passed value is an `Array`
 
   ```javascript
+  // actual array
   console.log(Array.isArray(['LOVE', 'JOY', 'PEACE']));           // true
+  // `array-like` but not actually array
   console.log(Array.isArray('LOVE'));                             // false
   ```
 
@@ -273,6 +287,7 @@
   > returns the number of elements in the array
 
   ```javascript
+  // Gives the count of items in an array
   console.log(['LOVE', 'JOY', 'PEACE'].length);                   // 3 (array length)
   ```
 

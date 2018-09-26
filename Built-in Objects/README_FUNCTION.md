@@ -81,6 +81,8 @@ console.log(f2()); // 20
 
     Using `apply` to append an array to another:
     ```javascript
+    // OBJECTIVE: Append array "badFeels" into "goodFeels"
+
     var goodFeels = ['LOVE', 'JOY'];
     var badFeels = ['HATE', 'SAD'];
 
@@ -102,10 +104,12 @@ console.log(f2()); // 20
 
     Using `apply` with built-in function:
     ```javascript
+    // OBJECTIVE: Get the element with the highest value from the array
+
     var numbers = [5, 6, 2, 3, 7];
     console.log(Math.max.apply(null, numbers));                // 7
 
-    // This about equal to Math.max(numbers[0], ...)
+    // This is about equal to Math.max(numbers[0], ...)
     console.log(Math.max(5, 6, 2, 3, 7));                      // 7
     ```
 
@@ -162,7 +166,7 @@ console.log(f2()); // 20
     // The function gets invoked at the global scope
     console.log(myFeels());                                    // LOVE
 
-    // Create a new function with "this" bound to "feelsModule"
+    // Create a new function with `this` bound to "feelsModule"
     var boundMyFeels = myFeels.bind(feelsModule);
     console.log(boundMyFeels());                               // HATE
     ```

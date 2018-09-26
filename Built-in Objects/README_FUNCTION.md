@@ -28,7 +28,7 @@ var sum = Function('a', 'b', 'return a + b');
 console.log(sum(2, 6)); // 8
 ```
 
-### Difference between `Function` constructor and function declaration:
+### Difference between `Function` constructor and a function declaration:
 ```javascript
 var x = 10;
 
@@ -58,7 +58,7 @@ console.log(f2()); // 20
 ## Methods
 
 - ### apply()
-  > calls a function with a given `this` value and `arguments` provided as an array
+  > Calls a function with a given `this` value and `arguments` provided as an array
 
   ```javascript
   console.log(Math.max.apply(null, [5, 6, 2, 3, 7]));          // 7
@@ -69,13 +69,14 @@ console.log(f2()); // 20
     function.apply(thisArg, [argsArray])
     ```
 
-    `thisArg`
-    > Optional. Usually `this` (context) or `null` (eg: used with built-ins)
+    `thisArg` _(optional)_
+    > Usually `this` (context) or `null` (eg: used with built-ins)
 
-    `argsArray`
-    > Optional. Array object
+    `argsArray` _(optional)_
+    > Array object
 
-    :: _Return value is the result of calling the function with the specified `this` value and arguments_
+  * #### Return value
+    > The result of calling the function with the specified `this` value and arguments
 
   * #### Examples
 
@@ -131,7 +132,7 @@ console.log(f2()); // 20
     ```
 
 - ### bind()
-  > creates a new **bound function (BF)** that wraps the original function object. Calling a **BF** generally results in the execution of its **wrapped function**
+  > Creates a new **bound function (BF)** that wraps the original function object. Calling a **BF** generally results in the execution of its **wrapped function**
 
   * #### Syntax
     ```javascript
@@ -144,7 +145,8 @@ console.log(f2()); // 20
     `arg1, arg2, ...`
     > Arguments to be prepended - usually as initial arguments
 
-    :: _Return value is a copy of the given function with the specified `this` value and initial arguments_
+  * #### Return value
+    > A copy of the given function with the specified `this` value and initial arguments
 
   * #### Examples
 
@@ -183,20 +185,21 @@ console.log(f2()); // 20
     ```
 
 - ### call()
-  > calls a function with a given `this` value and arguments provided individually
+  > Calls a function with a given `this` value and arguments provided individually
 
   * #### Syntax
     ```javascript
     function.call(thisArg, arg1, arg2, ...)
     ```
 
-    `thisArg`
-    > Optional. Usually `this` (context) or `null` (eg: used with built-ins)
+    `thisArg` _(optional)_
+    > Usually `this` (context) or `null` (eg: used with built-ins)
 
-    `argsArray`
-    > Optional. Arguments for the function
+    `argsArray` _(optional)_
+    > Arguments for the function
 
-    :: _Return value would be similar to `apply()`_
+  * #### Return value
+    > Would be similar to `apply()`
 
   * #### Examples
 

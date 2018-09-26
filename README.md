@@ -57,5 +57,17 @@ My sort of JS cheat in one place 😄
 
 - [Array](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_ARRAY.md)
 - [Function](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_FUNCTION.md)
-- JSON
+- [JSON](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_JSON.md)
 - Object
+
+
+---
+
+## 3. Cookie vs Session Storage vs Local Storage
+
+---
+
+## References
+- [MDN Web Docs](https://developer.mozilla.org)
+- [Node environment with `Webpack` and `Babel`](https://dev.to/aurelkurtula/setting-up-a-minimal-node-environment-with-webpack-and-babel--1j04)
+- [Function Declaration vs Function Expression](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions)

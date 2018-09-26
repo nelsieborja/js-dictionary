@@ -13,7 +13,7 @@
 
 - ### Actual array objects:
   ```javascript
-  [1, 2, 3].call(elem => { ... })
+  [1, 2, 3].call(elem => { ... });
   ```
 
 ---
@@ -22,105 +22,106 @@
 
 - ### slice <i>vs</i> splice
 
-  > **_slice()_** returns a shallow copy of a portion of the array into a new array object
+  > **_slice()_** returns a shallow copy of a portion of the array into a new array object; original array is kept
   ```javascript
   const array = [1, 2, 3, 4, 5];
 
   // Takes 3 items from index 0 to 3 (3 not included)
-  console.log(array.slice(0, 3)); // [1, 2, 3]
-  // slice will keep the original copy
-  console.log(array); // [1, 2, 3, 4, 5]
+  console.log(array.slice(0, 3));                                 // (3) [1, 2, 3]
+  // Original copy is unchanged
+  console.log(array);                                             // (5) [1, 2, 3, 4, 5]
   ```
 
-  > **_splice()_** removes element(s) from the array thereby changing its content
+  > **_splice()_** removes element(s) from the array; updates original array
   ```javascript
   // Deletes 3 items from index 0; returns deleted items
-  console.log(array.splice(0, 3)); // [1, 2, 3]
+  console.log(array.splice(0, 3));                                // (3) [1, 2, 3]
   // 2 items will remain in the array
-  console.log(array); // [4, 5]
+  console.log(array);                                             // (2) [4, 5]
   // Deletes 1 item starting from 2nd to the left, and inserts "4"
-  console.log(array.splice(-2, 1, 4)) // [4]
+  console.log(array.splice(-2, 1, 4))                             // [4]
   // "5" would be the remaining item plus the inserted "4"
-  console.log(array); // [4, 5]
+  console.log(array);                                             // (2) [4, 5]
   ```
 
 - ### pop <i>vs</i> push
 
-  > **_pop()_** removes the _last inserted_ item from the array
+  > **_pop()_** removes the _last inserted_ item from the array; updates original array
   ```javascript
-  const array = [1, 2, 3, 4, 5];
+  const feels = ['LOVE', 'JOY'];
 
-  // Returns the removed item "5"
-  console.log(array.pop()); // 5
+  // Returns the removed item
+  console.log(feels.pop());                                       // "JOY"
   // Array length is updated
-  console.log(array); // [1, 2, 3, 4]
+  console.log(feels);                                             // ["LOVE"]
   ```
 
-  > **_push()_** adds element(s) to the end of the array
+  > **_push()_** adds element(s) to the end of the array; updates original array
   ```javascript
   // Returns the new length of the array
-  console.log(array.push(5)); // 5
+  console.log(array.push('JOY'));                                 // 2 (array length)
   // Adding multiple items to the array
-  console.log(array.push(6, 7, 8, 9)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(array.push('HAPPY', 'PEACE'));                      // 4 (array length)
   ```
 
 - ### shift <i>vs</i> unshift
 
-  > **_shift()_** removes the _first inserted_ element from the array
+  > **_shift()_** removes the _first inserted_ element from the array; updates original array
   ```javascript
-  const array = [1, 2, 3, 4, 5];
+  const feels = ['LOVE', 'JOY', 'HAPPY'];
 
   // Returns the removed element
-  console.log(array.shift()); // 1
+  console.log(array.shift());                                     // "LOVE"
   // Array length is updated
-  console.log(array); // [2, 3, 4, 5]
+  console.log(array);                                             // (2) ["JOY", "HAPPY"]
   ```
 
-  > **_unshift()_** adds element(s) to the beginning of the array
+  > **_unshift()_** adds element(s) to the beginning of the array; updates original array
   ```javascript
-  // Adding "0,1"; Returns the new length of the array
-  console.log(array.unshift(0, 1)); // 6
-  console.log(array); [0, 1, 2, 3, 4, 5]
+  // Returns the new length of the array
+  console.log(array.unshift('LOVE', 'PEACE'));                    // 4 (array length)
+  console.log(array);                                             // (4) ["LOVE", "PEACE", "JOY", "HAPPY"]
   ```
 
 - ### keys <i>vs</i> values <i>vs</i> entries - ~~IE support~~
 
   > **_keys()_** returns a new `Array Iterator` object that contains the **_keys_** of the element(s)
   ```javascript
-  console.log(['a', 'b'].keys().next()); // { value: 0, done: false }
+  console.log(['LOVE', 'JOY'].keys().next());                     // { value: 0, done: false }
   ```
 
   > **_values()_** same as `keys()` but contains the **_values_**
   ```javascript
-  console.log(['a', 'b'].values().next()); // { value: 'a', done: false }
+  console.log(['LOVE', 'JOY'].values().next());                   // { value: 'LOVE', done: false }
   ```
 
   > **_entries()_** same as `keys()` and `values()` but contains the **_key/value pairs_** for each index of the array
   ```javascript
-  console.log(['a', 'b'].entries().next()); // [0, 'a']
+  console.log(['LOVE', 'JOY'].entries().next());                  // [0, 'LOVE']
   ```
 
 - ### every <i>vs</i> some <i>vs</i> includes
 
   > **_every()_** checks whether all elements in the array pass the provided condition
   ```javascript
-  // Not all the elements are greater than 3, so it will return "false"
-  console.log([1, 2, 3, 4, 5].every(currentValue => currentValue > 3)); // false
+  const array = [1, 2, 3, 4, 5];
+  // Not all the elements are greater than 3, so it gives "false"
+  console.log(array.every(currentValue => currentValue > 3));     // false
   ```
 
   > **_some()_** same as `every()` but checks if provided condition is met for at least one element
   ```javascript
   // 2 items are greater 3, so it gives "true"
-  console.log([1, 2, 3, 4, 5].every(currentValue => currentValue > 3)); // true
+  console.log(array.some(currentValue => currentValue > 3));      // true
   ```
 
   > **_includes()_** determines whether the array includes a certain element
   >> ~~IE support~~
   ```javascript
   // Checking if array contains "2"
-  console.log([1, 2, 3].includes(2)); // true
+  console.log([1, 2, 3].includes(2));                             // true
   // Array doesn't contain 4
-  console.log([1, 2, 3].includes(4)); // false
+  console.log([1, 2, 3].includes(4));                             // false
   ```
 
   > Unlike `every()` and `some()` it takes an element instead of a function
@@ -130,62 +131,65 @@
   > **_reverse()_** reverses an array
   ```javascript
   // Returns the reversed array
-  console.log(['Jan', 'Feb', 'Mar'].reverse()); // ['Mar', 'Feb', 'Jan']
+  console.log(['Jan', 'Feb', 'Mar'].reverse());                   // (3) ['Mar', 'Feb', 'Jan']
   ```
 
   > **_sort()_** sorts the elements of the array; default is according to string Unicode code points
   ```javascript
   // Returns the sorted array
-  console.log(['Jan', 'Feb', 'Mar'].sort()); // ['Feb', 'Jan', 'Mar']
+  console.log(['Jan', 'Feb', 'Mar'].sort());                      // (3) ['Feb', 'Jan', 'Mar']
   ```
 
   ```javascript
   // Sorting numbers
   const numbers = [40, 2, 5, 3];
   // Numbers are converted into string using the default
-  console.log(numbers.sort()); // [2, 3, 40, 5]
+  console.log(numbers.sort());                                    // (4) [2, 3, 40, 5]
   // Sort using "Compare Function"
-  console.log(numbers.sort((a, b) => a - b)); // [2, 3, 5, 40]
+  console.log(numbers.sort((a, b) => a - b));                     // (4) [2, 3, 5, 40]
   ```
 
 - ### join <i>vs</i> concat
 
   > **_join()_** join all elements of the array into a string
   ```javascript
-  const feels = ['love', 'hate', 'respect'];
+  const feels = ['LOVE', 'JOY', 'PEACE'];
 
-  console.log(feels.join()); // "love,hate,respect"
-  console.log(feels.join('')); // "lovehaterespect"
-  console.log(feels.join(' + ')); // "love + hate + respect"
+  console.log(feels.join());                                      // "LOVE,JOY,PEACE"
+  console.log(feels.join(''));                                    // "LOVEJOYPEACE"
+  console.log(feels.join(' + '));                                 // "LOVE + JOY + PEACE"
   ```
 
-  > **_concat()_** merges 2 or more arrays
+  > **_concat()_** merges 2 or more arrays; original arrays are kept
   ```javascript
   const array1 = [1, 2, 3];
   const array2 = [4, 5, 6];
   // Returns a new array
-  console.log(array1.concat(array2)); // [1, 2, 3, 4, 5, 6]
+  console.log(array1.concat(array2));                             // (6) [1, 2, 3, 4, 5, 6]
   // Existing array remains the same
-  console.log(array1); //[1, 2, 3]
+  console.log(array1, array2);                                    // (3) [1, 2, 3] (3) [4, 5, 6]
   ```
 
 - ### forEach <i>vs</i> filter <i>vs</i> map <i>vs</i> reduce/reduceRight
 
   > **_forEach()_** executes the provided function once for each element of the array
   ```javascript
-  ['love', 'hate', 'respect'].forEach(
-    (feel) => console.log(`Do you feel ${feel}?`)
+  ['LOVE', 'JOY', 'PEACE'].forEach(
+    feel => console.log(`Do you feel ${feel}?`)
   );
-  // "Do you feel love?"
-  // "Do you feel hate?"
-  // "Do you feel respect?"
+  // "Do you feel LOVE?"
+  // "Do you feel JOY?"
+  // "Do you feel PEACE?"
   ```
 
   > **_filter()_** executes the provided function on every element of the the array and returns a new filtered array
   ```javascript
-  console.log(['love', 'hate', 'respect'].filter(
-    (feel) => feel !== 'hate'
-  )); // ['love', 'respect']
+  console.log(
+    ['LOVE', 'JOY', 'PEACE', 'HATE'].filter(
+      feel => feel.toUpperCase() !== 'HATE'
+    )
+  );
+  // (3) ["LOVE", "JOY", "PEACE"]
   ```
 
   > The main difference between `forEach` and `filter` is that `forEach` just loop over the array and executes the function while `filter` also checks the return value of the function which will determine whether to keep(_true_)/remove(_false_) the element from the _resulting array_
@@ -195,76 +199,81 @@
   > We can see this method being used a lot in every ReactJS codebase ^\_^
 
   ```javascript
-  console.log(['love', 'hate', 'respect'].map(
-    (feel) => `I ${feel === 'hate' ? 'don\'t ' : ''}feel ${feel}`
-  )); // ["I feel love", "I don't feel hate", "I feel respect"]
+  console.log(
+    ['LOVE', 'JOY', 'PEACE', 'HATE'].map(
+      feel => `I ${feel.toUpperCase() === 'HATE' ? 'don\'t ' : ''}feel ${feel}`
+    )
+  );
+  // (4) ["I feel LOVE", "I feel JOY", "I feel PEACE", "I don't feel HATE"]
   ```
 
   > **_reduce()_** reduce the array into one single value; same goes to `reduceRight` but in _right-to-left_ direction
   ```javascript
-  console.log([1, 2, 3].reduce(
-    (sum, currentValue) => sum + currentValue)
-  ); // 6
+  console.log(
+    [1, 2, 3].reduce(
+      (sum, currentValue) => sum + currentValue
+    )
+  );
+  // 6
   ```
 
   > Also takes a function but it gets 2 arguments **sum**_(last returned value of the function)_ & **currentValue**_(current element in the iteration)_
 
 - ### find/findIndex <i>vs</i> indexOf/lastIndexOf
 
-  > **_find()_** returns the **_value_** of the _first element_ in the array _that satisfies the provided function_
+  > **_find()_** returns the **_value_** of the _first element_ in the array _that satisfies the provided function_, otherwise it returns `undefined`
   >> ~~IE support~~
   ```javascript
-  console.log([1, 2, 3].find(num => num < 4)); // 1
-  console.log([1, 2, 3].find(num => num > 4)); // undefined
+  console.log([1, 2, 3].find(num => num < 4));                    // 1
+  console.log([1, 2, 3].find(num => num > 4));                    // undefined
   ```
 
-  > **_findIndex()_** similar to `find()` but returns **_index_** instead of **_value_**
+  > **_findIndex()_** similar to `find()` but returns **_index_** instead of **_value_**. Returns `-1` if no occurence found
   >> ~~IE support~~
   ```javascript
-  console.log([1, 2, 3].findIndex(num => num > 1)); // 1
+  console.log([1, 2, 3].findIndex(num => num > 1));               // 1
   // None of the items satisfies the function
-  console.log([1, 2, 3].findIndex(num => num > 4)); // -1
+  console.log([1, 2, 3].findIndex(num => num > 4));               // -1
   ```
 
   > **_indexOf()_** returns the **_first index_** at which _given element can be found_ in the array; "-1" if it's not present
   ```javascript
-  console.log(['love', 'hate', 'love', 'respect'].indexOf('love')); // 0
+  const feels = ['LOVE', 'JOY', 'PEACE', 'LOVE'];
+  console.log(feels.indexOf('LOVE'));                             // 0
   // Start searching from index "1"
-  console.log(['love', 'hate', 'love', 'respect'].indexOf('love', 1)); // 2
+  console.log(feels.indexOf('LOVE', 1));                          // 3
   ```
 
   > **_lastIndexOf()_** similar to `indexOf()` but the array is searched backwards
   ```javascript
-  console.log(['love', 'hate', 'love', 'respect'].lastIndexOf('love')); // 2
-  console.log(['love', 'hate', 'love', 'respect'].lastIndexOf('love', 1)); // 0
+  console.log(feels.lastIndexOf('LOVE'));                         // 3
+  console.log(feels.lastIndexOf('LOVE', 1));                      // 0
   ```
 
 ---
 
 ## Special Methods / Properties
 
-- ### from()
+- ### from() ~~IE support~~
   > converts _array-like_ objects into a new, shallow-copied `Array` instance.
 
   ```javascript
-  console.log(Array.from('love')); // ['l', 'o', 'v', 'e']
+  console.log(Array.from('LOVE'));                                // (4) ["L", "O", "V", "E"]
   ```
-
-  > ~~IE support~~
 
 - ### isArray()
   > determines whether the passed value is an `Array`
 
   ```javascript
-  console.log(Array.isArray([1, 2, 3])); // true
-  console.log(Array.isArray('love')); // false
+  console.log(Array.isArray(['LOVE', 'JOY', 'PEACE']));           // true
+  console.log(Array.isArray('LOVE'));                             // false
   ```
 
 - ### length
   > returns the number of elements in the array
 
   ```javascript
-  console.log([1, 2, 3].length); // 3
+  console.log(['LOVE', 'JOY', 'PEACE'].length);                   // 3 (array length)
   ```
 
 ---

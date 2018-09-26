@@ -61,7 +61,7 @@ console.log(f2()); // 20
   > calls a function with a given `this` value and `arguments` provided as an array
 
   ```javascript
-  console.log(Math.max.apply(null, [5, 6, 2, 3, 7])); // 7
+  console.log(Math.max.apply(null, [5, 6, 2, 3, 7]));          // 7
   ```
 
   * #### Syntax
@@ -85,26 +85,28 @@ console.log(f2()); // 20
     var badFeels = ['HATE', 'SAD'];
 
     // Using "push" directly will push the array as single element
-    console.log(goodFeels.push(badFeels));                      // 3 (length of the array)
-    console.log(goodFeels);                                     // (3) ["LOVE", "JOY", ["HATE", "SAD"]]
+    console.log(goodFeels.push(badFeels));                     // 3 (array length)
+    console.log(goodFeels);                                    // (3) ["LOVE", "JOY", ["HATE", "SAD"]]
 
     // Using "concat" will create and return a new array
-    console.log(goodFeels.concat(badFeels));                    // (4) ["LOVE", "JOY", "HATE", "SAD"]
+    console.log(goodFeels.concat(badFeels));                   // (4) ["LOVE", "JOY", "HATE", "SAD"]
     // Original array is kept
-    console.log(goodFeels);                                     // (2) ["LOVE", "JOY"]
+    console.log(goodFeels);                                    // (2) ["LOVE", "JOY"]
 
     // "apply" to the rescue!
-    console.log(goodFeels.push.apply(goodFeels, badFeels));     // 4 (length of the array)
-    console.log(goodFeels);                                     // (4) ["LOVE", "JOY", "HATE", "SAD"]
+    console.log(goodFeels.push.apply(goodFeels, badFeels));    // 4 (array length)
+    // Below code would give the same result as the above code:
+    // Array.prototype.push.apply(goodFeels, badFeels);        // 4 (array length)
+    console.log(goodFeels);                                    // (4) ["LOVE", "JOY", "HATE", "SAD"]
     ```
 
     Using `apply` with built-in function:
     ```javascript
     var numbers = [5, 6, 2, 3, 7];
-    console.log(Math.max.apply(null, numbers));                  // 7
+    console.log(Math.max.apply(null, numbers));                // 7
 
     // This about equal to Math.max(numbers[0], ...)
-    console.log(Math.max(5, 6, 2, 3, 7));                        // 7
+    console.log(Math.max(5, 6, 2, 3, 7));                      // 7
     ```
 
     Using `apply` to chain constructors:
@@ -121,7 +123,7 @@ console.log(f2()); // 20
       console.log(args)
     }
 
-    ConstructorFunction.customMethod(1, 2, 3);                    // (3) [1, 2, 3]
+    ConstructorFunction.customMethod(1, 2, 3);                 // (3) [1, 2, 3]
     ```
 
 - ### bind()
@@ -153,16 +155,16 @@ console.log(f2()); // 20
       }
     };
 
-    console.log(feelsModule.getFeels());                          // HATE
+    console.log(feelsModule.getFeels());                       // HATE
 
     // Extracting a method from the object for later call
     var myFeels = feelsModule.getFeels;
     // The function gets invoked at the global scope
-    console.log(myFeels());                                       // LOVE
+    console.log(myFeels());                                    // LOVE
 
     // Create a new function with "this" bound to "feelsModule"
     var boundMyFeels = myFeels.bind(feelsModule);
-    console.log(boundMyFeels());                                  // HATE
+    console.log(boundMyFeels());                               // HATE
     ```
 
     Partially applied functions:
@@ -172,8 +174,8 @@ console.log(f2()); // 20
     }
 
     var leadingLoveFeelsList = feelsList.bind(null, 'LOVE');
-    console.log(leadingLoveFeelsList());                          // ["LOVE"]
-    console.log(leadingLoveFeelsList('PEACE', 'JOY'));            // ["LOVE", "PEACE", "JOY"]
+    console.log(leadingLoveFeelsList());                       // ["LOVE"]
+    console.log(leadingLoveFeelsList('PEACE', 'JOY'));         // (3) ["LOVE", "PEACE", "JOY"]
     ```
 
 - ### call()
@@ -291,19 +293,19 @@ console.log(f2()); // 20
 - ### length
   > returns the number of arguments expected by the function
   ```javascript
-  (function() {}).length          // 0
-  (function(a, b, c) {}).length   // 3
+  (function() {}).length                                       // 0
+  (function(a, b, c) {}).length                                // 3
   ```
 
 - ### name
   > returns the name of the function
   ```javascript
   var aaa = function() {};
-  aaa.name;                        // aaa
+  aaa.name;                                                    // aaa
   var bbb = function bbb_() {};
-  bbb.name;                        // bbb_
+  bbb.name;                                                    // bbb_
   function ccc() {}
-  ccc.name;                        // ccc
+  ccc.name;                                                    // ccc
   ```
 
 - ### Function.prototype
@@ -316,5 +318,5 @@ console.log(f2()); // 20
 
   function numb() {}
   // Calling custom method
-  numb.feels();                     // Here have some feels!!!
+  numb.feels();                                                // Here have some feels!!!
   ```

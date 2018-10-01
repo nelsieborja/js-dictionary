@@ -51,7 +51,7 @@ console.log(f1()); // 10
 console.log(f2()); // 20
 ```
 
-> Since `Function` constructor don't create closure to their creation contexts and are created in the global scope, they will only be able to access their own local variables and global ones. Unlike function declaration where they can also access those variables within the scope in which they were created.
+> Since `Function` constructor _don't create closure to their creation contexts_ and are _created in the global scope_, they will **only be able to access their own local variables and global ones**. Unlike function declaration where they can also access those **variables within the scope** in which they were created.
 
 ---
 

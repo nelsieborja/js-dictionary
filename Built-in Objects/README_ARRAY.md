@@ -1,6 +1,6 @@
 # Array
 
-> _List-like_ **objects** whose prototype has methods to perform traversal and mutation operations.
+> _List-like_ **objects** whose prototype has methods to perform traversal and mutation operations
 
 
 ## Ways to call an array method, that I know of:

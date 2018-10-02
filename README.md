@@ -8,7 +8,7 @@ My sort of JavaScript cheat in one place 😄
 
 > Or Module Systems in JavaScript. Where _"modules"_ refers to a small unit of independent, reusable code.
 
-### Importants:
+### Importance:
 
 * Maintainability
 * Namespacing
@@ -63,6 +63,37 @@ My sort of JavaScript cheat in one place 😄
 ---
 
 ## 2. Classes
+
+  * Prior simulation of classes
+    * [Object Literals](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_OBJECT_LITERALS.md)
+    ```javascript
+    var JSFramework = { /* ... */ };
+    ```
+
+    * [Constructor Functions](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_CONSTRUCTOR_FUNCTIONS.md)
+    ```javascript
+    function JSFramework() { /* ... */ };
+
+    // Instantiation
+    var fan = new JSFramework();
+    ```
+  * [Classes](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_CLASSES.md) - Syntactic sugar over existing prototype-based inheritance
+    ```javascript
+    // CLASS DECLARATION
+    class JSFramework {
+      constructor() {}
+      /* ... */
+    }
+
+    // CLASS EXPRESSION
+    const JSFramework = class {
+      constructor() {}
+      /* ... */
+    }
+
+    // Instantiation
+    var fe = new JSFramework();
+    ```
 
 ---
 

@@ -298,14 +298,14 @@ console.log(f2()); // 20
 ## Properties
 
 - ### length
-  > returns the number of arguments expected by the function
+  > Returns the number of arguments expected by the function
   ```javascript
   (function() {}).length                                       // 0
   (function(a, b, c) {}).length                                // 3
   ```
 
 - ### name
-  > returns the name of the function
+  > Returns the name of the function
   ```javascript
   var aaa = function() {};
   aaa.name;                                                    // aaa
@@ -316,7 +316,7 @@ console.log(f2()); // 20
   ```
 
 - ### Function.prototype
-  > represents the `Function` prototype object
+  > Represents the `Function` prototype object
   ```javascript
   // Using `Function.prototype` to define custom `Function` method "feels"
   Function.prototype.feels = function() {

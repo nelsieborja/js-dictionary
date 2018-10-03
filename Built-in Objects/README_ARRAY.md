@@ -266,7 +266,7 @@
 ## Special Methods / Properties
 
 - ### from() ~~IE support~~
-  > converts _array-like_ objects into a new, shallow-copied `Array` instance.
+  > Converts _array-like_ objects into a new, shallow-copied `Array` instance.
 
   ```javascript
   // Converts 'LOVE' into array
@@ -274,7 +274,7 @@
   ```
 
 - ### isArray()
-  > determines whether the passed value is an `Array`
+  > Determines whether the passed value is an `Array`
 
   ```javascript
   // actual array
@@ -284,7 +284,7 @@
   ```
 
 - ### length
-  > returns the number of elements in the array
+  > Returns the number of elements in the array
 
   ```javascript
   // Gives the count of items in an array
@@ -296,4 +296,4 @@
 ## Descriptions
 
 * ### array-like objects
-  > objects with a `length` property and indexed elements, or they are iterable objects
+  > Objects with a `length` property and indexed elements, or they are iterable objects

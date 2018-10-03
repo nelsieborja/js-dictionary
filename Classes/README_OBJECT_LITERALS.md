@@ -68,7 +68,7 @@ console.log(frontend2.getBias());                              // ViewJS
 console.log(frontend1.bias);                                   // ViewJS
 ```
 
-Above snippet reveals an important note: with _Object Literals_ you **always deal with the original class/object**, even if you define a new variable with the object as value. After setting the value of `frontend2.bias` to _"ViewJS"_ the value of `frontend1.bias` instead of _"ReactJS"_ became _"ViewJS"_ too!
+Above snippet reveals an important note: with _Object Literals_ you **always deal with the original class/object**, even if you define a new variable with the object as value. After setting the value of _`frontend2.bias`_ to _"ViewJS"_ the value of _`frontend1.bias`_ instead of _"ReactJS"_ became _"ViewJS"_ too!
 
 
 ---

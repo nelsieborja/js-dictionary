@@ -76,7 +76,7 @@ My sort of JavaScript cheat in one place 😄
     function JSFramework() { /* ... */ };
 
     // Instantiation
-    var fan = new JSFramework();
+    var frontend = new JSFramework();
     ```
   ### The syntactic sugar over existing prototype-based inheritance
   * [Classes](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_CLASSES.md)
@@ -94,7 +94,7 @@ My sort of JavaScript cheat in one place 😄
     }
 
     // Instantiation
-    var fe = new JSFramework();
+    var frontend = new JSFramework();
     ```
 
 ---

@@ -44,7 +44,7 @@ const JSFramework = {
 }
 ```
 
-The above class is ready for use, no need for instantiation. Unlike _Constructor Functions_ where you have to first instantiate an object _(via the `new` keyword)_ before you can start using it. With _Object Literals_ you cannot create an instance out of it because the class itself is already an instance.
+The above class is ready for use, no need for instantiation. Unlike _Constructor Functions_ where you have to first instantiate an object _(via the `new` keyword)_ before you can start using it. However, with _Object Literals_ you cannot create an instance from it because the class itself is already an instance.
 
 ### Using the above class:
 
@@ -71,4 +71,6 @@ console.log(frontend1.bias);                                   // ViewJS
 Above snippet reveals an important note: with _Object Literals_ you **always deal with the original class/object**, even if you define a new variable with the object as value. After setting the value of `frontend2.bias` to _"ViewJS"_ the value of `frontend1.bias` instead of _"ReactJS"_ became _"ViewJS"_ too!
 
 
-> _Object Literal_ is considered as `Singleton` since it can only deliver one single instance at a time, and you cannot create more objects out of it
+---
+
+> _Object Literal_ is considered as `Singleton` since it can only deliver one single instance at a time, and you cannot create more objects from it

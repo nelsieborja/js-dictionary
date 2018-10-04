@@ -1,5 +1,5 @@
 # JSON
-> Contains methods for parsing [JSON](https://json.org/) (JavaScript Object Notation) and converting values to JSON. Can't be called or constructed and has no functionality of its own
+> Contains methods for parsing [JSON](https://json.org/) _(JavaScript Object Notation)_ and converting values to JSON. Can't be called or constructed and has no functionality of its own
 
 ```javascript
 {
@@ -24,7 +24,7 @@
     > The string to parse as JSON
 
     `reviver` _(optional)_
-    > Works like a `middleware`, it transforms the parsed value before the value is being returned
+    > Works like a _`middleware`_, it transforms the parsed value before the value is being returned
 
   * #### Return value
     > The `object` corresponding to the given JSON `text`
@@ -48,7 +48,7 @@
     console.log(parsedPets.owner);                    // Asia
     ```
 
-    Using the `reviver` parameter:
+    Using the _`reviver`_ parameter:
     ```javascript
     // OBJECTIVE: Double any value with a type of number
     JSON.parse('{"dogs": 3, "cats": 1, "owner": "Asia"}', (key, value) =>
@@ -86,7 +86,7 @@
     > The value to convert to a JSON string
 
     `replacer` _(optional)_
-    > Similar to parameter `reviver` of `JSON.parse()` but accepts either a function or an array
+    > Similar to parameter _`reviver`_ of _`JSON.parse()`_ except it accepts not only a function but also an array
 
     `space` _(optional)_
     > any `String` or `Number` that will be used to insert a white space into the output for readability purposes. If `Number` is provided this will become the equivalent number of white spaces added
@@ -102,7 +102,7 @@
     JSON.stringify([1, 'false', false]);                // "[1,"false",false]"
     ```
 
-    Using the `replacer` parameter, as a function:
+    Using the _`replacer`_ parameter, as a function:
     ```javascript
     // OBJECTIVE: Get rid of properties having value with a type of string
     function replacer(key, value) {
@@ -117,14 +117,14 @@
     // "{"dogs":3,"cats":0}"
     ```
 
-     Using the `replacer` parameter, as an array:
+     Using the _`replacer`_ parameter, as an array:
     ```javascript
     // OBJECTIVE: Get only the properties having key of either "dogs" or "owner"
     JSON.stringify({ dogs: 3, cats: 0, owner: "Asia" }, ['dogs', 'owner']);
     // "{"dogs":3,"owner":"Asia"}"
     ```
 
-    Using the `space` parameter:
+    Using the _`space`_ parameter:
     ```javascript
     JSON.stringify({ dogs: 3, cats: 0, owner: "Asia" }, null, '\t');
     // "{

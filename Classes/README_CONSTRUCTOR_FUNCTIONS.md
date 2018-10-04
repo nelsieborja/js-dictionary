@@ -1,5 +1,5 @@
 # Constructor Functions
-> It's just a normal function and lets you create an object from it via the `new` keyword. Ideally defined using `CamelCase` format:
+> It's just a normal function and lets you create an object from it via the `new` keyword. Ideally defined using _`CamelCase`_ format:
 
 ```javascript
 // I'm actually a class!!!
@@ -34,7 +34,7 @@ function JSFramework(bias) {
 
 > The `this` keyword is used to define _internal_ properties and methods for a constructor function
 
-The _`init()`_ or a custom constructor is not needed in _Constructor Functions_ since it has its built-in constructor. You can even then pass in parameters directly while instantiating a new object. Creating now an object of type _`JSFramework`_:
+The _`init()`_ or a custom constructor is not needed in _`Constructor Functions`_ since it has its built-in constructor. You can even then pass in parameters directly while instantiating a new object. Creating now an object of type _`JSFramework`_:
 ```javascript
 // Assigning the new object to variable `frontend1`
 var frontend1 = new JSFramework();
@@ -49,7 +49,7 @@ console.log(frontend2.getBias());                             // ViewJS
 console.log(frontend1.bias);                                  // ReactJS
 ```
 
-With _Constructor Functions_ every instance will be unique, updating a property of one instance would not affect the other. That solves the problem with _Object Literals_ however, there's a drawback of this approach: __the properties will be recreated for every instantiation!!__
+With _`Constructor Functions`_ every instance will be unique, updating a property of one instance would not affect the other. That solves the problem with _Object Literals_ however, there's a drawback of this approach: <ins>the properties will be recreated for every instantiation!!</ins>
 
 
 ### `Prototype` to the rescue!
@@ -73,9 +73,9 @@ With _Constructor Functions_ every instance will be unique, updating a property 
     > Points back to the function
 
   * `__proto__`
-    > _Dunder_ proto, points to the prototype property of the constructor function
+    > _`Dunder`_ proto, points to the prototype property of the constructor function
 
-  #### Few things to consider before using `prototype`:
+  #### Few things to consider before using _`Prototype`_:
   * Properties and methods are shared between all the instances of the constructor function _(not recreated!!)_
 
   * Hence, all properties of _reference_ type are modifiable _(primitive properties aren't)_. So when an instance of the constructor function modifies those properties, it will be reflected amongst its instances
@@ -133,9 +133,9 @@ With _Constructor Functions_ every instance will be unique, updating a property 
 * ### primitive values
   > Data types: `null`, `undefined`, `boolean`, `number`, `string` and `symbol`
 
-  > Manipulating this value is working on the actual value stored in the variable. In other words, they are the _Access by Value_ values
+  > Manipulating this value is working on the actual value stored in the variable. In other words, they are the <ins>Access by Value</ins> values
 
 * ### reference values
   > Data types: those types that aren't mentioned under `primitive`
 
-  > Manipulating this value is working on the reference to that value rather than the actual value. In short, they are the _Access by Reference_ values
+  > Manipulating this value is working on the reference to that value rather than the actual value. In short, they are the <ins>Access by Reference</ins> values

@@ -3,7 +3,7 @@
 > _List-like_ **objects** whose prototype has methods to perform traversal and mutation operations
 
 
-## Ways to call an array method, that I know of:
+## Ways to call an array method:
 
 - ### For _array-like_ objects:
   ```javascript
@@ -87,17 +87,17 @@
 
 - ### keys <i>vs</i> values <i>vs</i> entries - ~~IE support~~
 
-  > **_keys()_** returns a new `Array Iterator` object that contains the **_keys_** of the element(s)
+  > **_keys()_** returns a new _`Array Iterator`_ object that contains the **_keys_** of the element(s)
   ```javascript
   console.log(['LOVE', 'JOY'].keys().next());                     // { value: 0, done: false }
   ```
 
-  > **_values()_** same as `keys()` but contains the **_values_**
+  > **_values()_** same as _`keys()`_ but contains the **_values_**
   ```javascript
   console.log(['LOVE', 'JOY'].values().next());                   // { value: 'LOVE', done: false }
   ```
 
-  > **_entries()_** same as `keys()` and `values()` but contains the **_key/value pairs_** for each index of the array
+  > **_entries()_** same as _`keys()`_ and _`values()`_ but contains the <ins>key/value pairs</ins> for each index of the array
   ```javascript
   console.log(['LOVE', 'JOY'].entries().next());                  // [0, 'LOVE']
   ```
@@ -111,7 +111,7 @@
   console.log(count.every(currentValue => currentValue > 3));     // false
   ```
 
-  > **_some()_** same as `every()` but checks if provided condition is met for at least one element
+  > **_some()_** same as _`every()`_ but checks if provided condition is met for at least one element
   ```javascript
   // OBJECTIVE: Check if some elements in the array are greater than 3
   console.log(array.some(currentValue => currentValue > 3));      // true
@@ -126,7 +126,7 @@
   console.log(['LOVE', 'JOY'].includes('HATE'));                  // false
   ```
 
-  > Unlike `every()` and `some()` it takes an element instead of a function
+  > Unlike _`every()`_ and _`some()`_ it takes an element instead of a function
 
 - ### reverse <i>vs</i> sort
 
@@ -196,11 +196,11 @@
   // (3) ["LOVE", "JOY", "PEACE"]
   ```
 
-  > The main difference between `forEach` and `filter` is that `forEach` just loop over the array and executes the function while `filter` also checks the return value of the function which will determine whether to keep(_true_)/remove(_false_) the element from the _resulting array_
+  > The main difference between `forEach` and `filter` is that `forEach` just loop over the array and executes the function while `filter` also checks the return value of the function which will determine whether to keep(_`true`_)/remove(_`false`_) the element from the _resulting array_
 
   > **_map()_** similar to `forEach` and `filter`, takes a function and run it against every element on the array. Except it will generate a new array based on the calling array
 
-  > We can see this method being used a lot in every ReactJS codebase ^\_^
+  > We can see this method being used a lot in every _`ReactJS`_ codebase ^\_^
 
   ```javascript
   // OBJECTIVE: Convert each element in the array into a short sentence
@@ -212,7 +212,7 @@
   // (4) ["I feel LOVE", "I feel JOY", "I feel PEACE", "I don't feel HATE"]
   ```
 
-  > **_reduce()_** reduce the array into one single value; same goes to `reduceRight` but in _right-to-left_ direction
+  > **_reduce()_** reduce the array into one single value; same goes to _`reduceRight()`_ but in <ins>right-to-left</ins> direction
   ```javascript
   // OBJECTIVE: Get the total sum of all the elements in the array
   console.log(
@@ -223,11 +223,11 @@
   // 6
   ```
 
-  > Also takes a function but it gets 2 arguments **sum**_(last returned value of the function)_ & **currentValue**_(current element in the iteration)_
+  > Also takes a function but it gets 2 arguments _`sum` (last returned value of the function)_ & _`currentValue` (current element in the iteration)_
 
 - ### find/findIndex <i>vs</i> indexOf/lastIndexOf
 
-  > **_find()_** returns the **_value_** of the _first element_ in the array _that satisfies the provided function_, otherwise it returns `undefined`
+  > **_find()_** returns the _`value`_ of the <ins>first element</ins> in the array <ins>that satisfies the provided function</ins>, otherwise it returns `undefined`
   >> ~~IE support~~
   ```javascript
   // Gives the first element that is less than "4"
@@ -236,7 +236,7 @@
   console.log([1, 2, 3].find(num => num > 4));                    // undefined
   ```
 
-  > **_findIndex()_** similar to `find()` but returns **_index_** instead of **_value_**. Returns `-1` if no occurence found
+  > **_findIndex()_** similar to _`find()`_ but returns <ins>_index_</ins> instead of <ins>_value_</ins>. Returns `-1` if no occurence found
   >> ~~IE support~~
   ```javascript
   // Gives the `index` of the first element that is greater than "1"
@@ -245,7 +245,7 @@
   console.log([1, 2, 3].findIndex(num => num > 4));               // -1
   ```
 
-  > **_indexOf()_** returns the **_first index_** at which _given element can be found_ in the array; "-1" if it's not present
+  > **_indexOf()_** returns the **_first index_** at which <ins>given element can be found</ins> in the array; `-1` if it's not present
   ```javascript
   const feels = ['LOVE', 'JOY', 'PEACE', 'LOVE'];
   // Gives the index of first element "LOVE"
@@ -254,7 +254,7 @@
   console.log(feels.indexOf('LOVE', 1));                          // 3
   ```
 
-  > **_lastIndexOf()_** similar to `indexOf()` but the array is searched backwards
+  > **_lastIndexOf()_** similar to _`indexOf()`_ but the array is searched backwards
   ```javascript
   // Gives the index of last element "LOVE"
   console.log(feels.lastIndexOf('LOVE'));                         // 3
@@ -266,7 +266,7 @@
 ## Special Methods / Properties
 
 - ### from() ~~IE support~~
-  > Converts _array-like_ objects into a new, shallow-copied `Array` instance.
+  > Converts _array-like_ objects into a new, shallow-copied _`Array`_ instance.
 
   ```javascript
   // Converts 'LOVE' into array
@@ -274,7 +274,7 @@
   ```
 
 - ### isArray()
-  > Determines whether the passed value is an `Array`
+  > Determines whether the passed value is an _`Array`_
 
   ```javascript
   // actual array
@@ -296,4 +296,4 @@
 ## Descriptions
 
 * ### array-like objects
-  > Objects with a `length` property and indexed elements, or they are iterable objects
+  > Objects with a `length` property and indexed elements, or they are iterable objects; but they are not `Array`

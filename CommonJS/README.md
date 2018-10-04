@@ -1,8 +1,8 @@
 # CommonJS
 
-A `CommonJS` module is essentially a reusable piece of JavaScript which exports specific objects, making them available for other modules to require in their programs. **_If you’ve programmed in Node.js, you’ll be very familiar with this format_**.
+A _`CommonJS`_ module is essentially a reusable piece of JavaScript which exports specific objects, making them available for other modules to require in their programs. <ins>If you’ve programmed in Node.js, you’ll be very familiar with this format</ins>.
 
-With `CommonJS`, each JavaScript file stores modules in its own unique module context _(just like wrapping it in a closure)_.
+With _`CommonJS`_, each JavaScript file stores modules in its own unique module context _(just like wrapping it in a closure)_.
 
 Here's how to expose a module using `module.exports` object:
 
@@ -14,7 +14,7 @@ const helloWorld = () => {
 module.exports = helloWorld;
 ```
 
-To use _helloWorld_ module, import it using `require`
+To use _`helloWorld`_ module, import it using `require`
 
 ```javascript
 // index.js
@@ -22,7 +22,7 @@ const helloWorld = require('./helloWorld');
 console.log(helloWorld());
 ```
 
-Under the hood, `helloWorld.js` is wrapped by `Node.js` this way:
+Under the hood, _`helloWorld.js`_ is wrapped by _`Node.js`_ this way:
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
@@ -34,7 +34,7 @@ Under the hood, `helloWorld.js` is wrapped by `Node.js` this way:
 })
 ```
 
-This is why you can access the _global-like_ variables like `require` and `module`. This also means variables are scoped within the module rather than the global object.
+This is why you can access the _`global-like`_ variables like `require` and `module`. This also means variables are scoped within the module rather than the global object.
 
 One more thing, required module will be a disconnected copy, hence update of values will take place in the module but not in the copied version. To update the copy manually:
 
@@ -49,4 +49,4 @@ const counter = require('./counter');
 counter.counter = 100;
 ```
 
-> **NOTE:** `CommonJS` takes a _server-first_ approach and synchronously loads modules.
+> _`CommonJS`_ takes a <ins>server-first</ins> approach and synchronously loads modules.

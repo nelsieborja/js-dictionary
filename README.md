@@ -16,16 +16,16 @@ My sort of JavaScript cheat in one place 😄
 
   ### Several ways to create:
   * [AMD](https://github.com/nelsieborja/js-dictionary/tree/master/AMD) (Asynchronous Module Definition)
-    * _Browser-first_ approach
-    * Loads modules asynchronously
+    * <ins>Browser-first</ins> approach
+    * Loads modules <ins>asynchronously</ins>
     ```javascript
     define([], function() { /* ... */ })
     ```
 
   * [CommonJS](https://github.com/nelsieborja/js-dictionary/tree/master/CommonJS)
     * Used in Node.js
-    * _Server-first_ approach
-    * Loads modules synchronously
+    * <ins>Server-first</ins> approach
+    * Loads modules <ins>synchronously</ins>
     ```javascript
     // module.js
     module.exports = { /* ... */ }
@@ -36,8 +36,8 @@ My sort of JavaScript cheat in one place 😄
 
   * [ES6 Modules](https://github.com/nelsieborja/js-dictionary/tree/master/ES6%20Modules)
 
-    * Compact and declarative syntax, also asynchronous module loading
-    * _imports_ are _**live read-only views of the exports**_ (with `CommonJS` _imports_ are copies of _exports_, consequently not alive)
+    * Compact and declarative syntax, also <ins>asynchronous</ins> module loading
+    * __imports__ are <ins>live read-only views</ins> of the __exports__ _(with `CommonJS` __imports__ are copies of __exports__, consequently not alive)_
 
     ```javascript
     // module.js
@@ -49,16 +49,16 @@ My sort of JavaScript cheat in one place 😄
     ```
 
   * [IIFE](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE) (Immediately-Invoked Function Expression)
-    * Anonymous Closure
-    * Global Import
-    * Object Interface
-    * Revealing Module Pattern
+    * [Anonymous Closure](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE#anonymous-closure)
+    * [Global Import](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE#global-import)
+    * [Object Interface](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE#object-interface)
+    * [Revealing Module Pattern](https://github.com/nelsieborja/js-dictionary/tree/master/IIFE#revealing-module-pattern)
     ```javascript
     (function(){ /* ... */ }());
     ```
 
   * [UMD](https://github.com/nelsieborja/js-dictionary/tree/master/UMD) (Universal Module Definition)
-    * Supports both `CommonJS` and `AMD` features
+    * Supports both _`CommonJS`_ and _`AMD`_ features
 
 ---
 
@@ -68,12 +68,16 @@ My sort of JavaScript cheat in one place 😄
 
   * [Object Literals](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_OBJECT_LITERALS.md)
     ```javascript
-    var JSFramework = { /* ... */ };
+    var JSFramework = {
+      bias: 'ReactJS'
+    };
     ```
 
   * [Constructor Functions](https://github.com/nelsieborja/js-dictionary/blob/master/Classes/README_CONSTRUCTOR_FUNCTIONS.md)
     ```javascript
-    function JSFramework() { /* ... */ };
+    function JSFramework() {
+      this.bias = 'ReactJS';
+    };
 
     // Instantiation
     var frontend = new JSFramework();
@@ -115,10 +119,10 @@ My sort of JavaScript cheat in one place 😄
 
 
 ## Some Key Points to Remember
-  * JavaScript is the **_third layer_** of the layer cake of standard web technologies (`HTML` & `CSS`)
-  * It is executed by the browser's JavaScript engine after the HTML and CSS have been put together - to ensure that the structure and styles are already in place by the time the JavaScript starts to run
+  * JavaScript is the <ins>third layer</ins> of the layer cake of standard web technologies (`HTML` & `CSS`)
+  * ~~It is executed by the browser's JavaScript engine after the HTML and CSS have been put together - to ensure that the structure and styles are already in place by the time the JavaScript starts to run~~
   * Its common use is to dynamically modify HTML and CSS
-  * JavaScript is **_case sensitive_**
+  * JavaScript is <ins>case sensitive</ins>
   * Ways to add JavaScript to a page:
     * Internal - added in the HTML markup via the `<script>` tag
     * External - script is an external file also added via the `<script>` tag where `src` contains the path to the file
@@ -135,7 +139,7 @@ My sort of JavaScript cheat in one place 😄
 
       > Also runs the scripts in the order they appear in the page
 
-    > NOTES: Using both implies the scripts have to be loaded asynchronously and executed based on an order and after document parsing is completed. They are more important when the `<script>` element is not placed at the very end of the document
+    Using both implies the scripts have to be loaded asynchronously and executed based on an order and after document parsing is completed. They are <ins>more important when the `<script>` element is not placed at the very end of the document</ins>
 
 
 
@@ -143,5 +147,5 @@ My sort of JavaScript cheat in one place 😄
 
 ## References
   * [MDN Web Docs](https://developer.mozilla.org)
-  * [Node environment with `Webpack` and `Babel`](https://dev.to/aurelkurtula/setting-up-a-minimal-node-environment-with-webpack-and-babel--1j04)
+  * [Node environment with _`Webpack`_ and _`Babel`_](https://dev.to/aurelkurtula/setting-up-a-minimal-node-environment-with-webpack-and-babel--1j04)
   * [Function Declaration vs Function Expression](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions)

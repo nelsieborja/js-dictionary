@@ -2,7 +2,7 @@
 
 Stands for **_Asynchronous Module Definition_**, will load modules asynchronously.
 
-Loading modules using `AMD` looks something like this:
+Loading modules using _`AMD`_ looks something like this:
 
 ```javascript
 define(['module1', 'module2'], function(module1, module2) {
@@ -27,8 +27,8 @@ define([], function() {
 });
 ```
 
-> **NOTE:** Unlike `CommonJS`, AMD takes a _browser-first_ approach alongside asynchronous behaviour to get the job done.
+>  Unlike _`CommonJS`_, AMD takes a <ins>browser-first approach alongside asynchronous </ins>behaviour to get the job done.
 
-Aside from asynchonousity, another benefit of `AMD` is that the modules can be objects, functions, constructors, strings, JSON and many other types, while `CommonJS` only supports objects as modules.
+Aside from asynchonousity, another benefit of _`AMD`_ is that the modules can be `objects`, `functions`, `constructors`, `strings`, `JSON` and many other types, while _`CommonJS`_ only supports objects as modules.
 
-`AMD` isn't compatible with IO, filesystem, and other server-oriented features available via `CommonJS`, and the function wrapping syntax is a bit verbose.
+_`AMD`_ isn't compatible with `IO`, `filesystem`, and other server-oriented features available via _`CommonJS`_, and the function wrapping syntax is a bit verbose.

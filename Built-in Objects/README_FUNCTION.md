@@ -51,14 +51,14 @@ console.log(f1()); // 10
 console.log(f2()); // 20
 ```
 
-> Since `Function` constructor _don't create closure to their creation contexts_ and are _created in the global scope_, they will **only be able to access their own local variables and global ones**. Unlike function declaration where they can also access those **variables within the scope** in which they were created.
+> Since `Function` constructor <ins>don't create closure to their creation contexts</ins> and are <ins>created in the global scope</ins>, they will <ins>only be able to access their own local variables and global ones</ins>. Unlike function declaration where they can also access those <ins>variables within the scope</ins> in which they were created.
 
 ---
 
 ## Methods
 
 - ### apply()
-  > Calls a function with a given `this` value and `arguments` provided as an array
+  > Calls a function with a given `this` value and _`arguments`_ provided as an array
 
   ```javascript
   console.log(Math.max.apply(null, [5, 6, 2, 3, 7]));          // 7
@@ -70,7 +70,7 @@ console.log(f2()); // 20
     ```
 
     `thisArg` _(optional)_
-    > Usually `this` (context) or `null` (eg: used with built-ins)
+    > Usually `this` _(context)_ or `null` _(eg: used with built-ins)_
 
     `argsArray` _(optional)_
     > Array object
@@ -80,7 +80,7 @@ console.log(f2()); // 20
 
   * #### Examples
 
-    Using `apply` to append an array to another:
+    Using _`apply`_ to append an array to another:
     ```javascript
     // OBJECTIVE: Append array "badFeels" into "goodFeels"
 
@@ -103,7 +103,7 @@ console.log(f2()); // 20
     console.log(goodFeels);                                    // (4) ["LOVE", "JOY", "HATE", "SAD"]
     ```
 
-    Using `apply` with built-in function:
+    Using _`apply`_ with built-in function:
     ```javascript
     // OBJECTIVE: Get the element with the highest value from the array
 
@@ -114,7 +114,7 @@ console.log(f2()); // 20
     console.log(Math.max(5, 6, 2, 3, 7));                      // 7
     ```
 
-    Using `apply` to chain constructors:
+    Using _`apply`_ to chain constructors:
     ```javascript
     // Defining a custom "Function" method
     Function.prototype.customMethod = function () {
@@ -132,7 +132,7 @@ console.log(f2()); // 20
     ```
 
 - ### bind()
-  > Creates a new **bound function (BF)** that wraps the original function object. Calling a **BF** generally results in the execution of its **wrapped function**
+  > Creates a new **_bound function (BF)_** that wraps the original function object. Calling a BF generally results in the <ins>execution of its wrapped function</ins>
 
   * #### Syntax
     ```javascript
@@ -150,7 +150,7 @@ console.log(f2()); // 20
 
   * #### Examples
 
-    Creating a `bound` function:
+    Creating a _`bound`_ function:
     ```javascript
     this.feels = 'LOVE'; // "this" refers to global "window" object
 
@@ -193,17 +193,17 @@ console.log(f2()); // 20
     ```
 
     `thisArg` _(optional)_
-    > Usually `this` (context) or `null` (eg: used with built-ins)
+    > Usually `this` _(context)_ or `null` _(eg: used with built-ins)_
 
     `argsArray` _(optional)_
     > Arguments for the function
 
   * #### Return value
-    > Would be similar to `apply()`
+    > Would be similar to _`apply()`_
 
   * #### Examples
 
-    Using `call` to change constractors for an object:
+    Using _`call`_ to change constructors for an object:
     ```javascript
     // Creating a constructor function with 2 parameters
     function Feels(feel, level) {
@@ -232,7 +232,7 @@ console.log(f2()); // 20
     console.log(new BadFeels('SAD', 50));     // BadFeels {feel: "SAD", level: "50%", type: "BAD"}
     ```
 
-    Using `call` with IIFE:
+    Using _`call`_ with IIFE:
     ```javascript
     var feels = [
       { feel: 'LOVE', level: 100 },
@@ -260,7 +260,7 @@ console.log(f2()); // 20
     // Output: #2 xx Feeling SAD at 10% level
     ```
 
-    Using `call` to specify the context for `this` of a function:
+    Using _`call`_ to specify the context for `this` of a function:
     ```javascript
     function feels() {
       console.log(`I feel ${this.feel} towards ${this.whom}`);
@@ -276,22 +276,22 @@ console.log(f2()); // 20
     // Output: I feel unsure towards JavaScript
     ```
 
-    Using `call` without specifying the first argument:
+    Using _`call`_ without specifying the first argument:
     ```javascript
     var feel = 'unsure';
 
     function feels() {
-      // The value of "this" is bound to the global object
+      // The value of `this` is bound to the global object
       console.log(`I feel ${this.feel} towards JavaScript`);
     }
     feels.call();
 
     // Output: I feel unsure towards JavaScript
     ```
-    > This will not work in _strict mode_ as the value of `this` will be `undefined`
+    > This will not work in _`strict mode`_ as the value of `this` will be `undefined`
 
 
-> `apply()` and `call()` syntax is almost identical, the fundamental difference is that `call()` accepts an **argument list** while `apply()` accepts a **single array of arguments**
+_`apply()`_ and _`call()`_ syntax is almost identical, the fundamental difference is that _`call()`_ <ins>accepts an argument list</ins> while _`apply()`_ <ins>accepts a single array of arguments</ins>
 
 ---
 

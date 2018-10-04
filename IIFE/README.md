@@ -13,7 +13,7 @@
   ```
 
 - ### Function Expression
-  > Functions on the _right-hand_ side of the assignment operator (=)
+  > Functions on the _`right-hand`_ side of the assignment operator (=)
 
   ```javascript {.line-numbers}
   // Assigning a function to variable helloWorld
@@ -24,10 +24,10 @@
   ```
 
   * #### Anonymous Function Expression
-    > They are anonymous because they don't have name following the **_function_** keyword. The above sample code is an _Anonymous Function Expression_
+    > They are anonymous because they don't have name following the `function` keyword. The above sample code is an _`Anonymous Function Expression`_
 
   * #### Named Function Expression
-    > One of the explained usage of these _Named Function Expression_ is with recursion
+    > One of the explained usage of these _`Named Function Expression`_ is with recursion
 
     ```javascript {.line-numbers}
     const helloWorld = function hw() {
@@ -37,9 +37,9 @@
     helloWorld(); // alerts 'Konnichiwa Sekai!'
     ```
 
-> Functions are most likely any other values in JS, they can be on the _right-hand_ side of an assignment operator or can be passed as argument to other function
+> Functions are most likely any other values in JS, they can be on the _`right-hand`_ side of an assignment operator or can be passed as argument to other function
 
-A widely discussed topic in JavaScript is the difference between _Function Definition_ and _Function Expression_. Apart from the syntax, function declarations during the first pass reading (JS file is run in a 2-pass read) are moved(_"hoisted"_) to the top of their scope. Though _Variable Declarations_ (function expressions are considered as such) get hoisted but their _Assignment Expressions_ don't, unlike _Function Definitions_ where its entire function body is lifted with it. [Checkout here](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/) for a more detailed explanation.
+A widely discussed topic in JavaScript is the difference between _`Function Definition`_ and _`Function Expression`_. Apart from the syntax, function declarations during the first pass reading _(JS file is run in a `2-pass read`)_ are moved _(`hoisted`)_ to the top of their scope. Though _`Variable Declarations`_ _(function expressions are considered as such)_ get _`hoisted`_ but their _`Assignment Expressions`_ don't, unlike _`Function Definitions`_ where its entire function body is lifted with it. Checkout [here](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/) for a more detailed explanation.
 
 #### Function Definition simulation:
 ```javascript {.line-numbers}
@@ -115,10 +115,10 @@ alert(foo()); // alerts '3'
 
 ### Understanding the syntax:
 
-1. As _Function Definition_ always starts with the **_function_** keyword, in order to convert this into an expression, **_"!"_** is prefixed in front of the **_function_** keyword. This basically enforces JavaScript to treat whatever that’s coming after “!” as an expression.
+1. As _`Function Definition`_ always starts with the `function` keyword, in order to convert this into an expression, **_"!"_** is prefixed in front of the `function` keyword. This basically enforces JavaScript to treat whatever that’s coming after "`!`" as an expression.
 2. On line 3, the function is invoked immediately.
 
-The above stylistic variation can be used by replacing **_"!"_** with **_"+, -, ~"_** as well. Basically any unary operator can be used. Even **_void_** keyword can be used:
+The above stylistic variation can be used by replacing "`!`" with "`+, -, ~`" as well. Basically any unary operator can be used. Even `void` keyword can be used:
 
 ```javascript {.line-numbers}
 void function() {
@@ -190,8 +190,8 @@ The return value from IIFE is assigned to the **_result_** variable.
 ```
 
 ### Some advantages of passing Globals to IIFE:
-1. JavaScript always does scope lookups from the current function's scope and keeps searching in higher scopes until it finds an identifier. When **_document_** is passed in on line 5, that's the only time it does scope lookup beyond local scope for the **_document_**.
-2. Also, minifiers can safely minify the parameter names declared in a function. Which means direct references to **_document_** within the function will not get minified as they are outside the scope.
+1. JavaScript always does scope lookups from the current function's scope and keeps searching in higher scopes until it finds an identifier. When `document` is passed in on line 5, that's the only time it does scope lookup beyond local scope for the `document`.
+2. Also, minifiers can safely minify the parameter names declared in a function. Which means direct references to `document` within the function will not get minified as they are outside the scope.
 
 ---
 
@@ -220,7 +220,7 @@ The return value from IIFE is assigned to the **_result_** variable.
   ```
 
 * ### Global Import
-  > Similar to _Anonymous Closure_ but accepts globals as parameter
+  > Similar to _`Anonymous Closure`_ but accepts globals as parameter
 
   ```javascript {.line-numbers}
   (function(namespace) {
@@ -262,7 +262,7 @@ The return value from IIFE is assigned to the **_result_** variable.
   ```
 
 * ### Revealing Module Pattern
-  > Similar to _Object Interface_ but it ensures all methods/variables are kept private until explicitly exposed
+  > Similar to _`Object Interface`_ but it ensures all methods/variables are kept private until explicitly exposed
 
   ```javascript {.line-numbers}
   const numIdentifier = (function() {

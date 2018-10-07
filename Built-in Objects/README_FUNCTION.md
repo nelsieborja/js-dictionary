@@ -291,7 +291,7 @@ console.log(f2()); // 20
     > This will not work in _`strict mode`_ as the value of `this` will be `undefined`
 
 
-_`apply()`_ and _`call()`_ syntax is almost identical, the fundamental difference is that _`call()`_ <ins>accepts an argument list</ins> while _`apply()`_ <ins>accepts a single array of arguments</ins>
+> _`apply()`_ and _`call()`_ syntax is almost identical, the fundamental difference is that _`call()`_ <ins>accepts an argument list</ins> while _`apply()`_ <ins>accepts a single array of arguments</ins>
 
 ---
 

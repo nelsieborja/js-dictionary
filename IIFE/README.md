@@ -2,39 +2,39 @@
 
 ## Few fundamental concepts around JS functions
 
-- ### Function Definition
+* ### Function Definition
   > Comes in various names - _function definition, function declaration, function statement_
 
   ```javascript {.line-numbers}
-  function helloWorld() {
-    alert('Konnichiwa Sekai!');
+  function jsFramework() {
+    alert('ReactJS');
   }
-  helloWorld(); // alerts 'Konnichiwa Sekai!'
+  jsFramework(); // alerts 'ReactJS'
   ```
 
-- ### Function Expression
-  > Functions on the _`right-hand`_ side of the assignment operator (=)
+* ### Function Expression
+  > Functions on the _`right-hand`_ side of the assignment operator (`=`)
 
   ```javascript {.line-numbers}
-  // Assigning a function to variable helloWorld
-  const helloWorld = function() {
-    alert('Konnichiwa Sekai!');
+  // Assigning a function to variable jsFramework
+  const jsFramework = function() {
+    alert('ReactJS');
   };
-  helloWorld(); // alerts 'Konnichiwa Sekai!'
+  jsFramework(); // alerts 'ReactJS'
   ```
 
   * #### Anonymous Function Expression
-    > They are anonymous because they don't have name following the `function` keyword. The above sample code is an _`Anonymous Function Expression`_
+    > They are anonymous because they don't have name following the `function` keyword. The above code is an _`Anonymous Function Expression`_
 
   * #### Named Function Expression
     > One of the explained usage of these _`Named Function Expression`_ is with recursion
 
     ```javascript {.line-numbers}
-    const helloWorld = function hw() {
-      alert('Konnichiwa Sekai!');
-      hw(); // pops endless alert
+    const jsFramework = function jsFramework_() {
+      alert('ReactJS');
+      jsFramework_(); // pops endless alert
     };
-    helloWorld(); // alerts 'Konnichiwa Sekai!'
+    jsFramework(); // alerts 'ReactJS'
     ```
 
 > Functions are most likely any other values in JS, they can be on the _`right-hand`_ side of an assignment operator or can be passed as argument to other function
@@ -186,7 +186,7 @@ The return value from IIFE is assigned to the **_result_** variable.
     for (let i = 1; i <= times; i++) {
         console.log(msg);
     }
-}('Konnichiwa', 5, document)); // logs 'Konnichiwa' 5 times
+}('IIFE', 5, document)); // logs 'IIFE' 5 times
 ```
 
 ### Some advantages of passing Globals to IIFE:

@@ -57,6 +57,7 @@ With _`Constructor Functions`_ every instance will be unique, updating a propert
 
   ```javascript
   function JSFramework() {}
+
   // Checking `prototype` properties
   console.log(JSFramework.prototype);
   // {
@@ -68,17 +69,18 @@ With _`Constructor Functions`_ every instance will be unique, updating a propert
   // }
   ```
 
-  #### Properties:
+  #### Built-in Properties:
   * `constructor`
     > Points back to the function
 
   * `__proto__`
     > _`Dunder`_ proto, points to the prototype property of the constructor function
 
+
   #### Few things to consider before using _`Prototype`_:
   * Properties and methods are shared between all the instances of the constructor function _(not recreated!!)_
 
-  * Hence, all properties of _reference_ type are modifiable _(primitive properties aren't)_. So when an instance of the constructor function modifies those properties, it will be reflected amongst its instances
+  * Hence, all properties of _`reference`_ type are modifiable _(`primitive` properties aren't!!)_. So when an instance of the constructor function modifies those properties, it will be reflected amongst its instances
 
   #### Example:
   Taking the above example, adding _`getBias()`_ and _`setBias()`_ into the `prototype` property:
@@ -139,3 +141,5 @@ With _`Constructor Functions`_ every instance will be unique, updating a propert
   > Data types: those types that aren't mentioned under `primitive`
 
   > Manipulating this value is working on the reference to that value rather than the actual value. In short, they are the <ins>Access by Reference</ins> values
+
+Learn [here](http://www.javascripttutorial.net/javascript-primitive-vs-reference-values/) the difference between _`prmitive`_ and _`reference`_ values.

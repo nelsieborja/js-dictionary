@@ -109,6 +109,7 @@ My sort of JavaScript cheat in one place 😄
   * [Function](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_FUNCTION.md)
   * [JSON](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_JSON.md)
   * Object
+  * [Set](https://github.com/nelsieborja/js-dictionary/blob/master/Built-in%20Objects/README_SET.md)
 
 
 ---

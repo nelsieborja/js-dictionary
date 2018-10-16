@@ -13,7 +13,7 @@
 
 - ### Actual array objects:
   ```javascript
-  [1, 2, 3].call(elem => { ... });
+  [1, 2, 3].forEach(elem => { ... });
   ```
 
 ---

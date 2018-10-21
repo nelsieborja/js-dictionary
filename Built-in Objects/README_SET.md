@@ -6,7 +6,7 @@
 const random = new Set([1, 2, 'ReactJS']);
 console.log(random.has(1));                                      // true
 console.log(random.has('ReactJS'));                              // true
-// It's case sensitive
+// It's case sensitive!!
 console.log(random.has('reactjs'));                              // false
 
 const
@@ -90,4 +90,30 @@ new Set([iterable]);
   ```javascript
   const jsFramework = new Set(['reactjs', 'viewjs']);
   console.log(jsFramework.size);                                 // 2
+  ```
+
+---
+
+## Converting _`Set`_ to _`Array`_
+Accessing the properties of a _`Set`_ object is not actually easy (at least for me), and in most cases we want the values in _`Array`_ form.
+
+```javascript
+const jsFramework = new Set(['reactjs', 'viewjs']);
+```
+
+* ### Using `spread` operator:
+  ```javascript
+  console.log([...jsFramework]);                                 // (2) ["reactjs", "viewjs"]
+  ```
+
+* ### Using `Array.from`
+  ```javascript
+  console.log(Array.from(jsFramework));                          // (2) ["reactjs", "viewjs"]
+  ```
+
+* ### The old fashion way:
+  ```javascript
+  const jsFrameworkArr = [];
+  jsFramework.forEach(val => jsFrameworkArr.push(val));
+  console.log(jsFrameworkArr);                                   // (2) ["reactjs", "viewjs"]
   ```

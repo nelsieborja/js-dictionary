@@ -166,7 +166,7 @@
 
     While <ins>static class-side properties</ins> and <ins>prototype data properties</ins> _(as mentioned above)_ must be defined outside of _`ClassBody`_.
 
-    * Static class-side property
+    * Static class-side property __(as of ES6)__
       ```Javascript
       JSFramework.staticBias = 'EmberJS';
       ```
@@ -316,8 +316,9 @@
     // ]
     ```
 
+  ## Inheritance
 
-  ## Sub classing with `extends`
+  ### Class gives simple inheritance with the keyword `extends`:
 
   * Creating a child class of another _Class Declarations/Expression_
 
@@ -394,7 +395,7 @@
     fe.getBias();                                                      // Your bias is ReactJS
     ```
 
-  ## _Super Class_ calls with `super`
+  ### Accessing respective parent functions via `super`:
   > This keyword is used to call corresponding methods of super class
 
   ```Javascript
@@ -424,5 +425,78 @@
   // ReactJS is hella cool!!
   ```
 
+
   ## Mixins
   Might explore onto it separately. Seen some examples and they look similar to extending regular objects
+
+
+---
+## ES2016 (also know as ES7) Updates
+
+  ### Static Class Properties
+
+  Static methods on classes exists as part of ES6. In ES7, declaring static class properties can now also be achieved by using the `static` keyword the same way you declare a static class methods.
+
+  ```Javascript
+  class JSFramework {
+    static bias = 'ReactJS'
+  }
+  console.log(JSFramework.bias);                                       // ReactJS
+  ```
+
+  ### Class Instance Properties
+
+  The approach is equivalent to assigning these properties in the `constructor` function.
+
+  ```Javascript
+  class JSFramework {
+    bias = 'ReactJS'
+    rating = {
+      rank: 1,
+      recommendations: '10k'
+    }
+
+    constructor() {
+      console.log(this.bias, this.rating.rank, this.rating.recommendations);
+    }
+  }
+  new JSFramework();                                                   // "ReactJS" 1 "10k"
+  ```
+
+  ### Bound Instance Methods
+
+  As mentioned above the `this` becomes `undefined` when the class method is accessed indirectly. Before ES7, you might bind the method to the class instance in the `constructor` method:
+
+  ```Javascript
+  class JSFramework {
+    constructor() {
+      this.bias = 'ReactJS';
+      this.getBias = this.getBias.bind(this);
+    }
+
+    getBias() {
+      console.log(this.bias)
+    }
+  }
+  const fe = new JSFramework();
+  const _getBias = fe.getBias;
+  _getBias();                                                          // ReactJS
+  ```
+
+  With ES7, the _`arrow function`_ can be used that will bound the method to the class instance at construction:
+
+  ```Javascript
+  class JSFramework {
+    constructor() {
+      this.bias = 'ReactJS';
+    }
+
+    getBias = () => {
+      console.log(this.bias)
+    }
+  }
+  const fe = new JSFramework();
+  const _getBias = fe.getBias;
+  _getBias();                                                          // ReactJS
+  ```
+

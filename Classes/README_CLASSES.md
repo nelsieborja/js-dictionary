@@ -431,7 +431,7 @@
 
 
 ---
-## ES2016 (also know as ES7) Updates
+## ES2016 (also known as ES7) Updates
 
   ### Static Class Properties
 

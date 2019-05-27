@@ -225,15 +225,22 @@
   // (4) ["I feel LOVE", "I feel JOY", "I feel PEACE", "I don't feel HATE"]
   ```
 
-  > **_reduce()_** reduce the array into one single value; same goes to _`reduceRight()`_ but in <ins>right-to-left</ins> direction
+  > **_reduce(callback, initialValue)_** reduce the array into one single value; same goes to _`reduceRight()`_ but in <ins>right-to-left</ins> direction
 
   ```javascript
   // OBJECTIVE: Get the total sum of all the elements in the array
-  console.log([1, 2, 3].reduce((sum, currentValue) => sum + currentValue));
-  // 6
+  console.log([1, 2, 3].reduce((sum, currentValue) => sum + currentValue)); // 6
+  console.log([1, 2, 3].reduce((sum, currentValue) => sum + currentValue, 100)); // 100 + 6 = 106
   ```
 
-  > Also takes a function but it gets 2 arguments _`sum` (last returned value of the function)_ & _`currentValue` (current element in the iteration)_
+  - **`callback`** - function to execute on each iteration, takes arguments:
+
+    - _`accumulator`_ - return value on each itertation
+    - _`currentValue`_ - current item
+    - _`currentIndex`_ - current index
+    - _`array`_ - the array called against `reduce()`
+
+  - **`initialValue`** - first argument to the first call of `callback`. The first element in the array will be used if not supplied
 
 - ### find/findIndex <i>vs</i> indexOf/lastIndexOf
 

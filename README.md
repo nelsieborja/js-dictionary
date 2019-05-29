@@ -182,6 +182,11 @@ Scripts is fetched asynchronously, executed only after the HTML parsing is done.
 
 ---
 
+## Cool Articles
+
+- [JavaScript Clean Code - Best Practices](https://devinduct.com/blogpost/22/javascript-clean-code-best-practices)
+- [ECMAScript Modules in Browsers](https://jakearchibald.com/2017/es-modules-in-browsers/)
+
 ## References
 
 - [MDN Web Docs](https://developer.mozilla.org)
